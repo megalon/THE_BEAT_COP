@@ -14,7 +14,7 @@ tbc.claude@gmail.com
 
 _________
 
-## Install instructions for THE BEAT COP, March 24, 2018
+# Install instructions for THE BEAT COP, March 24, 2018
 
 Pure Data Vanilla version 0.48 (or higher) and the flatGUI extension are required for THE BEAT COP.
 
@@ -22,7 +22,7 @@ Platform specific instructions below.
 
 _________
 
-### Windows    
+## Windows    
 **Step 1: Install PD Vanilla version 0.48 or higher**
 
 http://puredata.info/downloads/pure-data 
@@ -56,7 +56,7 @@ To declare the path to the tbc folder in your pd patch, simply create a new obje
 _________
 
 
-### Mac OS
+## Mac OS
 
 
 I don't have access to a Mac in order to test THE BEAT COP, but these instructions should work out. I will update this readme if changes need to be made.
@@ -95,7 +95,7 @@ To declare the path to the tbc folder in your new pd patch, simply create a new 
 _________
 
 
-### Linux
+## Linux
 
 **Step 1: Download lastest source code for PD Vanilla**
 
@@ -173,7 +173,7 @@ There is (at the time of this writing) no build for the flatgui extension on ARM
 
 In my experience "apt-get install puredata" downloads vanilla version 0.46.7-3, which is outdated and will not work for THE BEAT COP. (Version 0.48 has some list processing functions that I use.)
 
-## Cool, but how do I use it?
+# That's cool, but how do I use it?
 
 THE BEAT COP includes a comprehensive, interactive help file THE_BEAT_COP-help.pd
 
