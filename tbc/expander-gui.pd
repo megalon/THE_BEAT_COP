@@ -1,0 +1,314 @@
+#N canvas 52 81 1088 775 12;
+#X obj 801 125 cnv 15 153 150 empty empty EXP 10 12 0 14 -233017 -66577
+0;
+#X obj 810 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 855 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 825 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 840 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 870 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 885 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 900 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 915 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 930 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 810 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 870 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 870 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 870 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 870 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -99865 -1
+-1;
+#X obj 165 461 inlet;
+#X obj 581 752 outlet;
+#X obj 214 461 inlet;
+#X obj 174 725 send;
+#X obj 203 643 pack f s;
+#X msg 203 668 \$1-\$2;
+#X obj 413 543 t f f;
+#X obj 203 693 symbol;
+#X msg 553 199 knob-0;
+#X msg 543 179 bpm-btn;
+#X msg 533 159 pattern-btn;
+#X msg 523 139 sound-btn;
+#X msg 563 219 knob-1;
+#X obj 522 495 symbol;
+#X msg 573 239 samples-btn;
+#X obj 352 636 pack s f;
+#X msg 278 542 symbol \$1-r;
+#X msg 522 541 symbol \$1-s;
+#X msg 820 295 0, f 1;
+#X obj 825 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 840 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 855 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 810 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 825 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 840 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 855 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 810 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 825 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 840 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 840 295 1, f 1;
+#X msg 860 295 2, f 1;
+#X msg 880 295 3, f 1;
+#X msg 820 315 4, f 1;
+#X msg 840 315 5, f 1;
+#X msg 860 315 6, f 1;
+#X msg 880 315 7, f 1;
+#X msg 820 335 8, f 1;
+#X msg 840 335 9, f 1;
+#X msg 860 335 10, f 2;
+#X obj 855 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 880 335 11, f 2;
+#X obj 810 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 825 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 820 355 12, f 2;
+#X msg 840 355 13, f 2;
+#X obj 840 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 855 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 860 355 14, f 2;
+#X msg 880 355 15, f 2;
+#X msg 736 393 symbol grid-btn-\$1;
+#X obj 885 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 920 295 0, f 1;
+#X obj 900 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 915 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 930 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 885 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 900 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 915 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 930 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 885 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 900 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 915 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 940 295 1, f 1;
+#X msg 960 295 2, f 1;
+#X msg 980 295 3, f 1;
+#X msg 920 315 4, f 1;
+#X msg 940 315 5, f 1;
+#X msg 960 315 6, f 1;
+#X msg 980 315 7, f 1;
+#X msg 920 335 8, f 1;
+#X msg 940 335 9, f 1;
+#X msg 960 335 10, f 2;
+#X obj 930 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 980 335 11, f 2;
+#X obj 885 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 900 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 920 355 12, f 2;
+#X msg 940 355 13, f 2;
+#X obj 915 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 930 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 960 355 14, f 2;
+#X msg 980 355 15, f 2;
+#X msg 900 393 symbol grid-knob-\$1;
+#X msg 613 319 funct-btn;
+#X msg 623 339 fx-btn;
+#X msg 633 359 play-btn;
+#X msg 643 379 write-btn;
+#X obj 923 255 cnv 15 15 15 empty empty OUT 0 12 0 14 -233017 -66577
+0;
+#X obj 809 243 cnv 15 10 10 empty \$0-name 1199-grid-knob-4 0 0 0 14
+-233017 -66577 0;
+#X msg 352 691 label \$1;
+#X obj 454 751 outlet;
+#X obj 203 577 t b s;
+#X text 22 289 Inlets:;
+#X text 176 32 GUI Expander;
+#X text 22 369 Outlets:;
+#X obj 516 751 outlet;
+#X obj 522 630 tbc-utils/receive-generator;
+#X text 28 331 1 - Send data to the selected GUI element;
+#X obj 801 119 cnv 5 153 5 empty \$0-cnv-color empty 180 12 0 14 -123986
+-123986 0;
+#X text 22 61 This expander module is designed to give the user remote
+control over the buttons and knobs on The Beat Cop.;
+#X text 22 101 This module provides access to one GUI element at a
+time \, but it outputs the names of the send and recieve of this GUI
+element through the two left outlets. These names could be stored and
+the user could create a system to control several GUI elements at once.
+;
+#X text 29 431 2 - Data received from the selected GUI element;
+#X text 29 411 1 - The name of the receive for the GUI element selected.
+;
+#X text 29 391 0 - The name of the send for the GUI element selected.
+;
+#X obj 931 126 cnv 15 15 15 empty empty IN 0 12 0 14 -233017 -66577
+0;
+#X obj 352 721 s \$0-name;
+#X msg 352 666 symbol \$2-\$1;
+#X obj 810 255 cnv 15 15 15 empty empty S 0 12 0 14 -233017 -66577
+0;
+#X obj 873 255 cnv 15 15 15 empty empty R 0 12 0 14 -233017 -66577
+0;
+#X msg 593 279 key-control-btn;
+#X msg 603 299 midi-control-btn;
+#X msg 583 259 ext-step-btn;
+#X text 22 192 USAGE: Connect the EXP outlet of The Beat Cop to the
+left inlet. Click the button on the expander that corresponds to the
+GUI element you want to control. Send data to the selected GUI element
+through the right inlet \, and recieve data with the rightmost outlet.
+;
+#X text 28 310 0 - Input from the EXP outlet of The Beat Cop.;
+#X obj 165 486 change -1;
+#X obj 271 498 s \$0-cnv-color;
+#X obj 271 473 tbc-utils/color-canvas-for-exp;
+#X text 22 9 v1.0.0 megalon 2018;
+#X connect 1 0 26 0;
+#X connect 2 0 23 0;
+#X connect 3 0 25 0;
+#X connect 4 0 24 0;
+#X connect 5 0 27 0;
+#X connect 6 0 29 0;
+#X connect 7 0 126 0;
+#X connect 8 0 124 0;
+#X connect 9 0 125 0;
+#X connect 10 0 33 0;
+#X connect 11 0 98 0;
+#X connect 12 0 99 0;
+#X connect 13 0 100 0;
+#X connect 14 0 101 0;
+#X connect 15 0 129 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 21 0 19 0;
+#X connect 21 0 30 1;
+#X connect 21 1 111 1;
+#X connect 22 0 18 1;
+#X connect 23 0 28 0;
+#X connect 24 0 28 0;
+#X connect 25 0 28 0;
+#X connect 26 0 28 0;
+#X connect 27 0 28 0;
+#X connect 28 0 32 0;
+#X connect 28 0 31 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 30 0 121 0;
+#X connect 31 0 106 0;
+#X connect 31 0 110 0;
+#X connect 32 0 105 0;
+#X connect 32 0 111 0;
+#X connect 33 0 64 0;
+#X connect 34 0 44 0;
+#X connect 35 0 45 0;
+#X connect 36 0 46 0;
+#X connect 37 0 47 0;
+#X connect 38 0 48 0;
+#X connect 39 0 49 0;
+#X connect 40 0 50 0;
+#X connect 41 0 51 0;
+#X connect 42 0 52 0;
+#X connect 43 0 53 0;
+#X connect 44 0 64 0;
+#X connect 45 0 64 0;
+#X connect 46 0 64 0;
+#X connect 47 0 64 0;
+#X connect 48 0 64 0;
+#X connect 49 0 64 0;
+#X connect 50 0 64 0;
+#X connect 51 0 64 0;
+#X connect 52 0 64 0;
+#X connect 53 0 64 0;
+#X connect 54 0 55 0;
+#X connect 55 0 64 0;
+#X connect 56 0 58 0;
+#X connect 57 0 59 0;
+#X connect 58 0 64 0;
+#X connect 59 0 64 0;
+#X connect 60 0 62 0;
+#X connect 61 0 63 0;
+#X connect 62 0 64 0;
+#X connect 63 0 64 0;
+#X connect 64 0 28 0;
+#X connect 65 0 66 0;
+#X connect 66 0 97 0;
+#X connect 67 0 77 0;
+#X connect 68 0 78 0;
+#X connect 69 0 79 0;
+#X connect 70 0 80 0;
+#X connect 71 0 81 0;
+#X connect 72 0 82 0;
+#X connect 73 0 83 0;
+#X connect 74 0 84 0;
+#X connect 75 0 85 0;
+#X connect 76 0 86 0;
+#X connect 77 0 97 0;
+#X connect 78 0 97 0;
+#X connect 79 0 97 0;
+#X connect 80 0 97 0;
+#X connect 81 0 97 0;
+#X connect 82 0 97 0;
+#X connect 83 0 97 0;
+#X connect 84 0 97 0;
+#X connect 85 0 97 0;
+#X connect 86 0 97 0;
+#X connect 87 0 88 0;
+#X connect 88 0 97 0;
+#X connect 89 0 91 0;
+#X connect 90 0 92 0;
+#X connect 91 0 97 0;
+#X connect 92 0 97 0;
+#X connect 93 0 95 0;
+#X connect 94 0 96 0;
+#X connect 95 0 97 0;
+#X connect 96 0 97 0;
+#X connect 97 0 28 0;
+#X connect 98 0 28 0;
+#X connect 99 0 28 0;
+#X connect 100 0 28 0;
+#X connect 101 0 28 0;
+#X connect 104 0 120 0;
+#X connect 106 0 19 0;
+#X connect 106 1 19 1;
+#X connect 111 0 16 0;
+#X connect 121 0 104 0;
+#X connect 124 0 28 0;
+#X connect 125 0 28 0;
+#X connect 126 0 28 0;
+#X connect 129 0 21 0;
+#X connect 129 0 131 0;
+#X connect 131 0 130 0;
+#X coords 0 -1 1 1 155 177 1 800 100;

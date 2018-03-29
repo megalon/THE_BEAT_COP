@@ -1,0 +1,97 @@
+#N struct 1582-template float x float y float rgb;
+#N canvas 593 50 1015 794 12;
+#X declare -path tbc;
+#X obj 289 599 dac~;
+#X msg 880 40 \; pd dsp 1;
+#X obj 880 10 loadbang;
+#X obj 264 639 tbc/record-file;
+#N canvas 8 429 549 470 color-canvases 0;
+#X msg 37 285 colors-packed;
+#X obj 128 251 s;
+#X msg 149 220 symbol \$1-get-colors-packed;
+#X obj 86 196 t b b f f;
+#X obj 176 102 change 0;
+#X msg 37 334 color \$2 \$2 \$2;
+#X obj 37 376 s \$0-cnv-color;
+#X obj 86 47 inlet;
+#X text 81 21 Set the color of the horizontal stripe;
+#X obj 305 309 loadbang;
+#X msg 305 334 color 0 0 0;
+#X obj 37 309 tbc/tbc-utils/receive-generator;
+#X obj 86 101 change 0;
+#X obj 86 72 t f f;
+#X obj 86 126 pipe 100;
+#X obj 176 126 pipe 500;
+#X connect 0 0 11 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 3 1 0 0;
+#X connect 3 2 11 1;
+#X connect 3 3 2 0;
+#X connect 4 0 15 0;
+#X connect 5 0 6 0;
+#X connect 7 0 13 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 5 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 13 1 4 0;
+#X connect 14 0 3 0;
+#X connect 15 0 3 0;
+#X restore 728 591 pd color-canvases;
+#X obj 880 86 declare -path tbc;
+#X obj -36 -9 cnv 30 300 1000 empty \$0-cnv-color empty 20 12 0 14
+-71583 -71583 0;
+#X obj 1154 235 tabread array1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 16 float 3;
+#A 0 0.685714 1.6 13.6 13.8286 13.7143 5.6 6.4 7.42858 8.11429 8.68571
+12.3429 5.71429 4.57143 1.48571 0.342857 14.6286;
+#X coords 0 16 16 0 200 140 1 0 0;
+#X restore 1147 374 graph;
+#X floatatom 1154 260 5 0 0 0 - - -, f 5;
+#X obj 1144 162 f 0;
+#X obj 1177 162 + 1;
+#X obj 1144 187 mod 16;
+#X floatatom 1144 212 5 0 0 0 - - -, f 5;
+#X obj 1144 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1154 282 int;
+#X floatatom 1154 307 5 0 0 0 - - -, f 5;
+#X obj 1148 514 hsl 200 15 0 15 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 1144 103 metro 100;
+#X obj 1144 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 1213 57 5 0 0 0 - - -, f 5;
+#X floatatom 419 583 5 0 0 0 - - -, f 5;
+#X obj 265 155 THE_BEAT_COP;
+#X floatatom 496 587 5 0 0 0 - - -, f 5;
+#X obj 262 -27 cnv 30 500 220 empty \$0-cnv-color empty 20 12 0 14
+-71583 -71583 0;
+#X obj 246 557 cnv 30 500 300 empty \$0-cnv-color empty 20 12 0 14
+-71583 -71583 0;
+#X obj 736 -9 cnv 30 500 1000 empty \$0-cnv-color empty 20 12 0 14
+-71583 -71583 0;
+#X connect 2 0 1 0;
+#X connect 7 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
+#X connect 13 0 7 0;
+#X connect 13 0 17 0;
+#X connect 14 0 10 0;
+#X connect 15 0 16 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 1;
+#X connect 22 0 0 0;
+#X connect 22 0 3 0;
+#X connect 22 1 0 1;
+#X connect 22 1 3 1;
+#X connect 22 2 21 0;
+#X connect 22 3 23 0;
+#X connect 22 6 4 0;

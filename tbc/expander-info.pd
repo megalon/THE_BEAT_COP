@@ -1,0 +1,79 @@
+#N canvas 238 95 664 881 12;
+#X obj 101 575 cnv 15 218 183 empty empty EXP 10 12 0 14 -228856 -66577
+0;
+#X obj 101 570 cnv 5 218 5 empty \$0-cnv-color empty 20 12 0 14 -123986
+-123986 0;
+#X floatatom 110 598 5 0 0 1 FX - -, f 5;
+#X floatatom 110 618 5 0 0 1 BPM - -, f 5;
+#X floatatom 110 638 5 0 0 1 Swing_Percentage - -, f 5;
+#X floatatom 110 678 5 0 0 1 Patch_ID - -, f 5;
+#X symbolatom 110 718 24 0 0 2 Current_State - -, f 24;
+#X obj 91 826 outlet;
+#X obj 151 826 outlet;
+#X obj 211 826 outlet;
+#X obj 331 826 outlet;
+#X obj 391 826 outlet;
+#X obj 110 737 cnv 15 15 15 empty empty FX 0 12 0 14 -233017 -66577
+0;
+#X obj 140 737 cnv 15 15 15 empty empty BPM 0 12 0 14 -233017 -66577
+0;
+#X obj 183 737 cnv 15 15 15 empty empty S% 0 12 0 14 -233017 -66577
+0;
+#X obj 264 737 cnv 15 15 15 empty empty ID 0 12 0 14 -233017 -66577
+0;
+#X obj 295 737 cnv 15 15 15 empty empty CS 0 12 0 14 -233017 -66577
+0;
+#X obj 110 100 t f f;
+#X msg 110 174 current-fx;
+#X obj 110 125 t b f;
+#X msg 130 231 bpm;
+#X msg 150 291 swing;
+#X obj 110 70 change -1;
+#X obj 110 45 inlet exp;
+#X msg 170 351 clock-time-ms;
+#X floatatom 110 658 5 0 0 1 Clock_Time_ms - -, f 5;
+#X obj 271 826 outlet;
+#X obj 223 737 cnv 15 15 15 empty empty MS 0 12 0 14 -233017 -66577
+0;
+#X obj 110 204 tbc-utils/receive-generator;
+#X obj 130 261 tbc-utils/receive-generator;
+#X obj 150 321 tbc-utils/receive-generator;
+#X obj 170 381 tbc-utils/receive-generator;
+#X obj 190 441 tbc-utils/receive-generator;
+#X obj 230 145 s \$0-cnv-color;
+#X obj 230 120 tbc-utils/color-canvas-for-exp;
+#X text 12 12 v1.0.0 Claude Barker 2018;
+#X msg 190 411 global-state-off;
+#X connect 2 0 7 0;
+#X connect 3 0 8 0;
+#X connect 4 0 9 0;
+#X connect 5 0 10 0;
+#X connect 6 0 11 0;
+#X connect 17 0 19 0;
+#X connect 17 1 34 0;
+#X connect 18 0 28 0;
+#X connect 19 0 18 0;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 19 0 36 0;
+#X connect 19 0 24 0;
+#X connect 19 1 5 0;
+#X connect 19 1 28 1;
+#X connect 19 1 29 1;
+#X connect 19 1 30 1;
+#X connect 19 1 31 1;
+#X connect 19 1 32 1;
+#X connect 20 0 29 0;
+#X connect 21 0 30 0;
+#X connect 22 0 17 0;
+#X connect 23 0 22 0;
+#X connect 24 0 31 0;
+#X connect 25 0 26 0;
+#X connect 28 0 2 0;
+#X connect 29 0 3 0;
+#X connect 30 0 4 0;
+#X connect 31 0 25 0;
+#X connect 32 0 6 0;
+#X connect 34 0 33 0;
+#X connect 36 0 32 0;
+#X coords 0 -1 1 1 220 210 1 100 550;

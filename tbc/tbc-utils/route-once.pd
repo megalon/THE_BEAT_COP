@@ -1,0 +1,21 @@
+#N canvas 773 167 487 321 12;
+#X msg 100 126 1;
+#X obj 39 96 inlet;
+#X obj 39 275 outlet;
+#X obj 100 96 inlet reset;
+#X obj 39 180 route \$1;
+#X obj 39 205 t a b;
+#X msg 76 235 0, f 1;
+#X text 39 19 Only allow the chosen value to be routed once. Input
+argument indicates chosen value.;
+#X obj 100 275 outlet other-values;
+#X obj 39 155 spigot 1;
+#X connect 0 0 9 1;
+#X connect 1 0 9 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 1 8 0;
+#X connect 5 0 2 0;
+#X connect 5 1 6 0;
+#X connect 6 0 9 1;
+#X connect 9 0 4 0;

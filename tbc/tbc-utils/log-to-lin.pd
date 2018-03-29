@@ -1,0 +1,9 @@
+#N canvas 104 328 347 257 10;
+#X obj 61 153 outlet;
+#X obj 61 69 inlet;
+#X text 23 26 Linear 0 - 1 converted to log;
+#X obj 61 104 expr 1-exp($f1*-6.90777);
+#X obj 61 126 clip 0 1;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;

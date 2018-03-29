@@ -1,0 +1,144 @@
+#N canvas 0 50 611 785 12;
+#X obj 184 409 t b f;
+#X obj 194 429 t b f;
+#X obj 204 449 t b f;
+#X obj 214 469 t b f;
+#X obj 224 489 t b f;
+#X obj 234 509 t b f;
+#X obj 244 529 t b f;
+#X obj 254 549 t b f;
+#X obj 264 569 t b f;
+#X obj 274 589 t b f;
+#X obj 284 609 t b f;
+#X obj 294 629 t b f;
+#X obj 304 649 t b f;
+#X obj 314 669 t b f;
+#X obj 324 689 t b f;
+#X obj 76 720 pack f f f f f f f f f f f f f f f f;
+#X obj 204 261 r \$1-\$2-3;
+#X obj 214 281 r \$1-\$2-4;
+#X obj 224 301 r \$1-\$2-5;
+#X obj 234 321 r \$1-\$2-6;
+#X obj 244 341 r \$1-\$2-7;
+#X obj 254 361 r \$1-\$2-8;
+#X obj 264 381 r \$1-\$2-9;
+#X obj 274 401 r \$1-\$2-10;
+#X obj 284 421 r \$1-\$2-11;
+#X obj 294 441 r \$1-\$2-12;
+#X obj 304 461 r \$1-\$2-13;
+#X obj 314 481 r \$1-\$2-14;
+#X obj 324 501 r \$1-\$2-15;
+#X obj 76 745 outlet;
+#X obj 174 201 r \$1-\$2-0;
+#X obj 184 221 r \$1-\$2-1;
+#X obj 194 241 r \$1-\$2-2;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 856 125 Receive the incoming data and pack them into a list
+for the sequencer to hold onto. Note that the step-sequencer is used
+in this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 856 205 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X text 859 281 comment;
+#X text 76 31 Receive the incoming data and pack them into a list for
+the sequencer to hold onto. Note that the step-sequencer is used in
+this case just as a way to store 16 values \, not as an actual step
+sequencer.;
+#X text 74 113 This patch allows any change made to the data to be
+stored \, whether it is coming from the knobs \, from the save file
+\, or from an external source.;
+#X connect 0 0 15 0;
+#X connect 0 1 15 1;
+#X connect 1 0 15 0;
+#X connect 1 1 15 2;
+#X connect 2 0 15 0;
+#X connect 2 1 15 3;
+#X connect 3 0 15 0;
+#X connect 3 1 15 4;
+#X connect 4 0 15 0;
+#X connect 4 1 15 5;
+#X connect 5 0 15 0;
+#X connect 5 1 15 6;
+#X connect 6 0 15 0;
+#X connect 6 1 15 7;
+#X connect 7 0 15 0;
+#X connect 7 1 15 8;
+#X connect 8 0 15 0;
+#X connect 8 1 15 9;
+#X connect 9 0 15 0;
+#X connect 9 1 15 10;
+#X connect 10 0 15 0;
+#X connect 10 1 15 11;
+#X connect 11 0 15 0;
+#X connect 11 1 15 12;
+#X connect 12 0 15 0;
+#X connect 12 1 15 13;
+#X connect 13 0 15 0;
+#X connect 13 1 15 14;
+#X connect 14 0 15 0;
+#X connect 14 1 15 15;
+#X connect 15 0 29 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 8 0;
+#X connect 23 0 9 0;
+#X connect 24 0 10 0;
+#X connect 25 0 11 0;
+#X connect 26 0 12 0;
+#X connect 27 0 13 0;
+#X connect 28 0 14 0;
+#X connect 30 0 15 0;
+#X connect 31 0 0 0;
+#X connect 32 0 1 0;

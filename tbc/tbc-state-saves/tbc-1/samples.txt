@@ -1,0 +1,16 @@
+../tbc-demo-samples/tbc-chiptune-samples/Kick_02.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Kick_03.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Kick_06.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Kick_14.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Snare_01.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Snare_02.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Snare_08.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Snare_09.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Cym_03.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Cym_04.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Cym_06.wav;
+../tbc-demo-samples/tbc-chiptune-samples/Cym_09.wav;
+../tbc-demo-samples/tbc-chiptune-samples/FX_03.wav;
+../tbc-demo-samples/tbc-chiptune-samples/FX_06.wav;
+../tbc-demo-samples/tbc-chiptune-samples/FX_09.wav;
+../tbc-demo-samples/tbc-chiptune-samples/FX_10.wav;

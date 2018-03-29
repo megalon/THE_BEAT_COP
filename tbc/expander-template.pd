@@ -1,0 +1,47 @@
+#N canvas 300 292 1009 523 12;
+#X obj 601 125 cnv 15 218 163 empty empty template 10 12 0 14 -228856
+-66577 0;
+#X obj 601 120 cnv 5 218 5 empty \$0-cnv-color empty 20 12 0 14 -123999
+-123999 0;
+#X obj 71 55 inlet info;
+#X floatatom 71 110 5 0 0 1 Patch_ID - -, f 5;
+#X text 611 166 This is a template to;
+#X text 611 186 help anyone that wants;
+#X text 611 206 to create their own;
+#X text 611 226 expander module for;
+#X text 611 246 The Beat Cop.;
+#X obj 71 80 change -1;
+#X obj 61 142 cnv 15 400 300 empty empty Patch_goes_here 10 12 0 14
+-228856 -66577 0;
+#X obj 179 277 tbc-utils/receive-generator;
+#X obj 179 219 t b f;
+#X obj 199 118 s \$0-cnv-color;
+#X obj 199 93 tbc-utils/color-canvas-for-exp;
+#X msg 179 251 current-sample-patch-id;
+#X floatatom 179 302 5 0 0 1 Current_Sampler's_Patch_ID - -, f 5;
+#X text 248 9 This simple example gets the patch id of the array where
+the currently selected sound is stored. Since the samplers are each
+their own abstraction \, their patch ID is different from TBC's patch
+ID.;
+#X text 10 12 v1.0.0 megalon 2018;
+#X obj 71 388 t b a;
+#X obj 71 413 s;
+#X obj 179 473 outlet;
+#X obj 71 174 t f f;
+#X msg 71 358 symbol \$1-get-current-sample-patch-id;
+#X connect 2 0 9 0;
+#X connect 3 0 22 0;
+#X connect 9 0 3 0;
+#X connect 9 0 14 0;
+#X connect 11 0 16 0;
+#X connect 12 0 15 0;
+#X connect 12 1 11 1;
+#X connect 14 0 13 0;
+#X connect 15 0 11 0;
+#X connect 16 0 21 0;
+#X connect 19 0 20 0;
+#X connect 19 1 20 1;
+#X connect 22 0 23 0;
+#X connect 22 1 12 0;
+#X connect 23 0 19 0;
+#X coords 0 -1 1 1 220 190 1 600 100;

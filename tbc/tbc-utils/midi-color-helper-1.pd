@@ -1,0 +1,84 @@
+#N canvas 361 271 918 678 12;
+#X obj 48 382 f;
+#X obj 158 119 inlet velocity;
+#X obj 48 119 inlet on-off;
+#X obj 85 596 outlet;
+#X msg 226 408 1, f 1;
+#X msg 247 408 0, f 1;
+#X obj 226 358 sel;
+#X obj 339 119 inlet select-number;
+#X msg 146 408 1, f 1;
+#X msg 167 408 0, f 1;
+#X obj 186 139 inlet velocity2;
+#X obj 165 528 t b;
+#X obj 351 139 inlet current-number;
+#X obj 165 553 f;
+#X obj 85 503 spigot 1;
+#X obj 165 503 spigot 0;
+#X obj 146 436 change;
+#X obj 226 436 change;
+#X obj 48 336 == 1;
+#X obj 48 359 sel 1;
+#X text 154 19 This abstraction helps determine the color of a grid
+button on a midi controller with velocity based colors.;
+#X obj 85 382 f 0;
+#X obj 186 329 f;
+#X obj 137 260 f;
+#X obj 127 285 spigot;
+#X obj 186 244 f;
+#X obj 137 194 sel 1 0;
+#X floatatom 165 578 5 0 0 0 - - -, f 5;
+#X obj 177 620 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 107 550 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 361 159 inlet flip-priority;
+#X text 396 192 Typically velocity 2 takes priority over velocity 1
+This is used for the sequencer. To show when the current note is playing
+\, it lights up with velocity 2 \, even if it was displaying velocity
+1 before. This shows the scrolling effect of the tracker "head" going
+across the steps in the sequence.;
+#X text 394 300 The "flip-priority" inlet allows you to give priority
+to velocity 1 instead. So now if the tracker "head" passed over the
+current step \, and velocity 1 is being display \, it will keep displaying
+velocity 1 I used this for the FX view \, to allow the tracker to show
+the currently playing FX in yellow \, then overwrite this with white
+if the grid button for that FX is on.;
+#X connect 0 0 15 0;
+#X connect 0 0 14 0;
+#X connect 1 0 0 1;
+#X connect 1 0 23 1;
+#X connect 2 0 18 0;
+#X connect 2 0 26 0;
+#X connect 4 0 17 0;
+#X connect 5 0 17 0;
+#X connect 6 0 4 0;
+#X connect 6 0 9 0;
+#X connect 6 1 5 0;
+#X connect 6 1 8 0;
+#X connect 7 0 6 1;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 25 0;
+#X connect 11 0 13 0;
+#X connect 12 0 6 0;
+#X connect 13 0 3 0;
+#X connect 13 0 27 0;
+#X connect 14 0 3 0;
+#X connect 14 0 29 0;
+#X connect 15 0 11 0;
+#X connect 16 0 14 1;
+#X connect 17 0 15 1;
+#X connect 18 0 19 0;
+#X connect 19 0 0 0;
+#X connect 19 1 21 0;
+#X connect 21 0 14 0;
+#X connect 21 0 15 0;
+#X connect 22 0 13 1;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 0;
+#X connect 26 0 23 0;
+#X connect 26 1 25 0;
+#X connect 27 0 28 0;
+#X connect 30 0 24 1;

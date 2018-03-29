@@ -1,0 +1,166 @@
+#N canvas 616 177 1257 512 12;
+#X msg 706 385 traverse \$1 \, bang;
+#X msg 706 273 clear;
+#X obj 501 203 t b b b;
+#X msg 501 178 1;
+#X obj 706 332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1 -1;
+#X obj 706 410 pointer;
+#N canvas 1266 536 546 174 \$0-template 1;
+#X obj 18 -18 struct \$0-template float x float y float rgb;
+
+#X obj 0 8 filledpolygon rgb rgb  0 
+0 8 4 8 4 12 0 12 0 8;
+#X obj 0 28 filledpolygon rgb rgb  0 
+0 28 4 28 4 32 0 32 0 28;
+#X obj 0 32 filledpolygon rgb rgb  0 
+0 32 4 32 4 36 0 36 0 32;
+#X obj 0 44 filledpolygon rgb rgb  0 
+0 44 4 44 4 48 0 48 0 44;
+#X obj 4 4 filledpolygon rgb rgb  0 
+4 4 8 4 8 8 4 8 4 4;
+#X obj 4 24 filledpolygon rgb rgb  0 
+4 24 8 24 8 28 4 28 4 24;
+#X obj 4 28 filledpolygon rgb rgb  0 
+4 28 8 28 8 32 4 32 4 28;
+#X obj 4 40 filledpolygon rgb rgb  0 
+4 40 8 40 8 44 4 44 4 40;
+#X obj 8 0 filledpolygon rgb rgb  0 
+8 0 12 0 12 4 8 4 8 0;
+#X obj 8 20 filledpolygon rgb rgb  0 
+8 20 12 20 12 24 8 24 8 20;
+#X obj 8 24 filledpolygon rgb rgb  0 
+8 24 12 24 12 28 8 28 8 24;
+#X obj 8 36 filledpolygon rgb rgb  0 
+8 36 12 36 12 40 8 40 8 36;
+#X obj 12 0 filledpolygon rgb rgb  0 
+12 0 16 0 16 4 12 4 12 0;
+#X obj 12 16 filledpolygon rgb rgb  0 
+12 16 16 16 16 20 12 20 12 16;
+#X obj 12 20 filledpolygon rgb rgb  0 
+12 20 16 20 16 24 12 24 12 20;
+#X obj 12 32 filledpolygon rgb rgb  0 
+12 32 16 32 16 36 12 36 12 32;
+#X obj 16 12 filledpolygon rgb rgb  0 
+16 12 20 12 20 16 16 16 16 12;
+#X obj 16 16 filledpolygon rgb rgb  0 
+16 16 20 16 20 20 16 20 16 16;
+#X obj 16 28 filledpolygon rgb rgb  0 
+16 28 20 28 20 32 16 32 16 28;
+#X obj 20 8 filledpolygon rgb rgb  0 
+20 8 24 8 24 12 20 12 20 8;
+#X obj 20 12 filledpolygon rgb rgb  0 
+20 12 24 12 24 16 20 16 20 12;
+#X obj 20 24 filledpolygon rgb rgb  0 
+20 24 24 24 24 28 20 28 20 24;
+#X obj 20 44 filledpolygon rgb rgb  0 
+20 44 24 44 24 48 20 48 20 44;
+#X obj 20 48 filledpolygon rgb rgb  0 
+20 48 24 48 24 52 20 52 20 48;
+#X obj 24 4 filledpolygon rgb rgb  0 
+24 4 28 4 28 8 24 8 24 4;
+#X obj 24 8 filledpolygon rgb rgb  0 
+24 8 28 8 28 12 24 12 24 8;
+#X obj 24 20 filledpolygon rgb rgb  0 
+24 20 28 20 28 24 24 24 24 20;
+#X obj 24 56 filledpolygon rgb rgb  0 
+24 56 28 56 28 60 24 60 24 56;
+#X obj 28 0 filledpolygon rgb rgb  0 
+28 0 32 0 32 4 28 4 28 0;
+#X obj 28 4 filledpolygon rgb rgb  0 
+28 4 32 4 32 8 28 8 28 4;
+#X obj 28 16 filledpolygon rgb rgb  0 
+28 16 32 16 32 20 28 20 28 16;
+#X obj 28 40 filledpolygon rgb rgb  0 
+28 40 32 40 32 44 28 44 28 40;
+#X obj 28 44 filledpolygon rgb rgb  0 
+28 44 32 44 32 48 28 48 28 44;
+#X obj 28 48 filledpolygon rgb rgb  0 
+28 48 32 48 32 52 28 52 28 48;
+#X obj 28 56 filledpolygon rgb rgb  0 
+28 56 32 56 32 60 28 60 28 56;
+#X obj 32 0 filledpolygon rgb rgb  0 
+32 0 36 0 36 4 32 4 32 0;
+#X obj 32 12 filledpolygon rgb rgb  0 
+32 12 36 12 36 16 32 16 32 12;
+#X obj 32 56 filledpolygon rgb rgb  0 
+32 56 36 56 36 60 32 60 32 56;
+#X obj 36 0 filledpolygon rgb rgb  0 
+36 0 40 0 40 4 36 4 36 0;
+#X obj 36 8 filledpolygon rgb rgb  0 
+36 8 40 8 40 12 36 12 36 8;
+#X obj 36 36 filledpolygon rgb rgb  0 
+36 36 40 36 40 40 36 40 36 36;
+#X obj 36 40 filledpolygon rgb rgb  0 
+36 40 40 40 40 44 36 44 36 40;
+#X obj 36 44 filledpolygon rgb rgb  0 
+36 44 40 44 40 48 36 48 36 44;
+#X obj 36 48 filledpolygon rgb rgb  0 
+36 48 40 48 40 52 36 52 36 48;
+#X obj 36 56 filledpolygon rgb rgb  0 
+36 56 40 56 40 60 36 60 36 56;
+#X obj 40 0 filledpolygon rgb rgb  0 
+40 0 44 0 44 4 40 4 40 0;
+#X obj 40 4 filledpolygon rgb rgb  0 
+40 4 44 4 44 8 40 8 40 4;
+#X obj 40 56 filledpolygon rgb rgb  0 
+40 56 44 56 44 60 40 60 40 56;
+#X obj 44 40 filledpolygon rgb rgb  0 
+44 40 48 40 48 44 44 44 44 40;
+#X obj 44 44 filledpolygon rgb rgb  0 
+44 44 48 44 48 48 44 48 44 44;
+#X obj 44 48 filledpolygon rgb rgb  0 
+44 48 48 48 48 52 44 52 44 48;
+#X obj 44 56 filledpolygon rgb rgb  0 
+44 56 48 56 48 60 44 60 44 56;
+#X obj 48 0 filledpolygon rgb rgb  0 
+48 0 52 0 52 4 48 4 48 0;
+#X obj 48 56 filledpolygon rgb rgb  0 
+48 56 52 56 52 60 48 60 48 56;
+#X obj 52 0 filledpolygon rgb rgb  0 
+52 0 56 0 56 4 52 4 52 0;
+#X obj 52 52 filledpolygon rgb rgb  0 
+52 52 56 52 56 56 52 56 52 52;
+#X obj 56 4 filledpolygon rgb rgb  0 
+56 4 60 4 60 8 56 8 56 4;
+#X obj 56 48 filledpolygon rgb rgb  0 
+56 48 60 48 60 52 56 52 56 48;
+#X obj 60 8 filledpolygon rgb rgb  0 
+60 8 64 8 64 12 60 12 60 8;
+#X obj 60 48 filledpolygon rgb rgb  0 
+60 48 64 48 64 52 60 52 60 48;
+#X restore 706 213 pd \$0-template;
+#X obj 706 303 s pd-\$0-data;
+#X obj 706 360 symbol pd-\$0-data;
+#N canvas 147 576 450 300 \$0-data 0;
+#X coords 0 0 64 64 64 64 2 0 0;
+#X restore 0 0 pd \$0-data;
+#X msg 501 392 0;
+#X msg 569 392 0;
+#X obj 501 109 inlet on-off;
+#X obj 501 134 sel 1;
+#X obj 501 438 append \$0-template x y rgb;
+#X obj 501 228 t b b b;
+#X obj 637 391 f 555;
+#X obj 674 109 inlet rgb;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
+#X connect 2 0 15 0;
+#X connect 2 1 4 0;
+#X connect 2 2 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 14 3;
+#X connect 8 0 0 0;
+#X connect 10 0 14 0;
+#X connect 11 0 14 1;
+#X connect 12 0 13 0;
+#X connect 13 0 3 0;
+#X connect 13 1 1 0;
+#X connect 15 0 10 0;
+#X connect 15 1 11 0;
+#X connect 15 2 16 0;
+#X connect 16 0 14 2;
+#X connect 17 0 16 1;
+#X coords 0 0 1 1 64 64 2 0 0;
+
+#X coords 0 0 1 1 64 64 2 0 0;

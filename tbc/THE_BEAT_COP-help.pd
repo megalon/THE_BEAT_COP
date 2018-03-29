@@ -1,0 +1,582 @@
+#N struct 1991-template float x float y float rgb;
+#N canvas 202 50 1298 632 12;
+#X declare -path tbc;
+#N canvas 185 122 815 769 text-box-display 0;
+#X obj 14 14 inlet;
+#X obj 14 99 tbc-utils/receive-generator;
+#X obj 14 39 t b f;
+#X symbolatom 14 124 30 0 0 0 - - -, f 30;
+#X msg 14 69 symbol global-state-off;
+#X obj 14 411 sel one-shot-mode write-mode sound-mode pattern-mode
+bpm-mode samples-mode fx-mode funct-mode paste-mode midi-mapper-mode
+;
+#X obj 14 653 symbol \$0-one-shot-mode;
+#X obj 55 633 symbol \$0-write-mode;
+#X obj 96 613 symbol \$0-sound-mode;
+#X obj 137 593 symbol \$0-pattern-mode;
+#X obj 179 573 symbol \$0-bpm-mode;
+#X obj 220 553 symbol \$0-samples-mode;
+#X obj 261 533 symbol \$0-fx-mode;
+#X obj 303 513 symbol \$0-funct-mode;
+#X obj 344 493 symbol \$0-paste-mode;
+#X obj 385 473 symbol \$0-midi-mapper-mode;
+#N canvas 9 50 657 538 \$0-one-shot-mode 0;
+#X obj 26 17 cnv 30 600 500 empty empty one-shot-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 145 This mode is active when no other modes are active.
+More specifically \, when the following buttons are OFF: SOUND \, PATTERN
+\, BPM \, SAMPLES \, FUNCT \, and WRITE. Note that PLAY \, EXT_STEP
+\, KEYBRD \, and MIDI could all be active \, and The Beat Cop could
+still be in one-shot-mode.;
+#X text 64 335 Play the sound associated with this grid button.;
+#X text 64 395 Adjust the volume for the sound associated with this
+grid knob.;
+#X text 44 315 grid-buttons:;
+#X text 44 375 grid-knobs:;
+#X text 44 455 To exit one-shot-mode: press any modifier button (WRITE
+\, SOUND \, PATTERN \, BPM \, SAMPLES \, FUNCT \, FX).;
+#X text 44 65 This is the default mode for The Beat Cop. This mode
+allows you to play any of the loaded sounds by pressing the grid buttons
+\, and change the volume of these sounds by turning the grid knobs.
+;
+#X text 44 235 For "looper style" recording of one-shots gates \, press
+FUNCT then LIVE. Refer to the help text for FUNCT mode.;
+#X restore 624 252 pd \$0-one-shot-mode;
+#X text 113 13 This subpatch opens other subpatches to display information
+about The Beat Cop.;
+#N canvas 12 50 658 546 \$0-write-mode 0;
+#X obj 26 17 cnv 30 600 500 empty empty write-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 217 grid-buttons:;
+#X text 44 277 grid-knobs:;
+#X text 44 145 This mode is activated either by pressing the WRITE
+button \, or pressing the SOUND button then selecting a sound using
+the grid-buttons.;
+#X text 44 455 To exit write-mode \, press the WRITE button again \,
+or press any other modifier button (SOUND \, PATTERN \, BPM \, SAMPLES
+\, FUNCT \, FX);
+#X text 64 337 The pitch range is 0|0 through 2|0 \, where the first
+number is the octave \, and the second number is the note on the chromatic
+scale. The default value 1|0 is assumed to be 440hz (concert A).;
+#X text 64 407 For octaves \, 0 indicates an octave down \, 1 indicates
+the default octave \, and 2 indicates an octave up.;
+#X text 64 297 A standard 16 step sequence of frequencies. Each knob
+controls the pitch of the corresponding grid button.;
+#X text 44 55 This mode allows you to create a sequence of gate / frequency
+pairs for the currently selected sound. You can see which sound is
+currently selected on the display \, labeled "SOUND:0-15". To change
+the selected sound \, press the SOUND button.;
+#X text 64 237 A standard 16 step sequence of gates. Press the PLAY
+button to play the sequence.;
+#X restore 624 272 pd \$0-write-mode;
+#N canvas 3 50 658 546 \$0-sound-mode 0;
+#X obj 26 17 cnv 30 600 500 empty empty sound-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 195 grid-buttons:;
+#X text 44 267 grid-knobs:;
+#X text 64 215 Select a sound. The Beat Cop then switches to write-mode
+to allow you to edit the sequence for the new selected sound.;
+#X text 43 101 This mode is activated by pressing the SOUND button.
+;
+#X text 44 55 This mode allows you to change which sound is currently
+selected \, and also change the sample start positions.;
+#X text 64 287 Change the sample start positions. Each knob controls
+the start position of the associated sound \, with the top left knob
+being sound 0 \, and the bottom right being sound 15;
+#X text 44 127 The flashing grid button / grid knob indicates which
+sound is currently selected.;
+#X text 64 347 While the flashing grid knob indicates which sound is
+selected \, you may change the sample start position of any sound without
+having to select it first.;
+#X text 44 435 To exit sound-mode: select a sound \, press the SOUND
+button again \, or press any other modifier button (WRITE \, PATTERN
+\, BPM \, SAMPLES \, FUNCT \, FX);
+#X restore 624 292 pd \$0-sound-mode;
+#N canvas 0 50 658 736 \$0-pattern-mode 0;
+#X obj 26 17 cnv 30 600 700 empty empty pattern-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 175 grid-buttons:;
+#X text 44 437 grid-knobs:;
+#X text 43 101 This mode is activated by pressing the PATTERN button.
+;
+#X text 64 255 You can create a chain of patterns by selecting multiple
+grid buttons. The grid button's label idicates what position it is
+in the chain.;
+#X text 64 457 Currently the grid knobs serve no function in pattern
+mode.;
+#X text 43 506 To exit pattern mode \, press the PATTERN button again
+\, or press any other modifier button (WRITE \, SOUND \, BPM \, SAMPLES
+\, FUNCT \, FX).;
+#X text 43 566 Note that when you exit pattern mode \, the new pattern
+chain will be applied \, but it will only switch to the next pattern
+after the current pattern has finished.;
+#X text 44 56 This mode allows you to select a new pattern to play
+\, or select multiple patterns to create a pattern chain.;
+#X text 64 195 Select a new pattern to play by pressing the associated
+grid button. For example \, if you pressed the top left grid button
+(grid-btn-0) \, you would select pattern 0;
+#X text 43 131 The flashing grid button indicates which pattern is
+currently playing.;
+#X text 64 315 You can play the same pattern multiple times by simply
+pressing its button multiple times.;
+#X text 64 355 You can play any pattern as many times as you want \,
+there is no limit to the pattern chain \, but it will currently overflow
+the grid button label and create a long string of text that extends
+off of each button.;
+#X text 42 629 If the EXT_STEP button is on \, the pattern will only
+change when the PATTERN inlet is banged. This is due to the fact that
+you can never know when a pattern has "finished" when the steps can
+be played in an arbitrary order. You must explicitly switch pattern
+by banging the pattern inlet.;
+#X restore 624 312 pd \$0-pattern-mode;
+#N canvas 6 50 658 671 \$0-bpm-mode 0;
+#X obj 26 17 cnv 30 600 630 empty empty bpm-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 345 grid-buttons:;
+#X text 44 421 grid-knobs:;
+#X text 43 101 This mode is activated by pressing the BPM button.;
+#X text 64 375 A standard 16 step sequence of gates. This is the same
+sequence of gates shown in write-mode.;
+#X text 43 586 To exit bpm-mode \, press the BPM button again \, or
+press any other modifier button (WRITE \, SOUND \, PATTERN \, SAMPLES
+\, FUNCT \, FX).;
+#X text 63 191 Adjust the SWING of The Beat Cop. This value is shown
+as a percentage from 0% to 100% in the display.;
+#X text 63 291 Adjust the BPM of The Beat Cop. Values range from 60bpm
+to 240bpm.;
+#X text 44 55 This mode allows you to change the SWING and BPM of The
+Beat Cop \, and also edit the GATE and RETRIG sequence.;
+#X text 64 491 The grid-knob labels indicate how many times the sound
+is triggered on the associated step. Values range from 1/1 (no retrig)
+\, 1/2 \, 1/3 \, 1/4 \, 1/6 \, 1/8 \, 1/12 \, and 1/16 (16 retrigs).
+;
+#X text 64 451 A standard 16 step sequence of retrigs. Each knob controls
+the retrig of the corresponding grid button's step.;
+#X text 43 241 Knob B (The right knob on the top row \, above the FUNCT
+button):;
+#X text 43 151 Knob A (The left knob on the top row \, above and left
+of the FUNCT button):;
+#X restore 624 332 pd \$0-bpm-mode;
+#N canvas 7 50 658 637 \$0-samples-mode 0;
+#X obj 26 17 cnv 30 600 600 empty empty samples-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 281 grid-buttons:;
+#X text 44 357 grid-knobs:;
+#X text 43 191 This mode is activated by pressing the SAMPLES button.
+;
+#X text 64 311 Select a sound to replace with a new sample. After loading
+a new sound \, The Beat Cop stays in samples-mode.;
+#X text 64 447 Note that the flashing button / knob indicates which
+sound is currently selected \, but you may edit the sample length of
+any sound without having to select it first.;
+#X text 43 542 To exit samples-mode \, press the SAMPLES button again
+\, or press any other modifier button (WRITE \, SOUND \, PATTERN \,
+BPM \, FUNCT \, FX).;
+#X text 44 55 This mode allows you to load new samples into The Beat
+Cop \, and also change the lengths of the loaded samples.;
+#X text 43 221 The flashing grid button indicates the currently selected
+sound.;
+#X text 44 95 The Beat Cop does NOT copy samples that are loaded into
+it \, instead it saves the path to the sample in a text file. This
+text file is saved when The Beat Cop exits samples-mode. To record
+samples into The Beat Cop within Pure Data \, press FUNCT then REC
+and use the IN-L~ and IN-R~ inlets.;
+#X text 64 387 Change the sample lengths. Each knob controls the sample
+length of the associated sound \, with the top left knob being sound
+0 \, and the bottom right being sound 15;
+#X restore 624 352 pd \$0-samples-mode;
+#N canvas 7 50 658 597 \$0-fx-mode 0;
+#X obj 26 17 cnv 30 600 550 empty empty fx-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 181 grid-buttons:;
+#X text 44 387 grid-knobs:;
+#X text 44 55 This mode allows you to change the currently playing
+FX \, or write to the FX sequence.;
+#X text 43 101 This mode is activated by pressing the FX button.;
+#X text 64 241 When the REC_FX button is OFF \, the selected FX is
+only applied while that FX button is on \, and while The Beat Cop is
+in FX mode. If The Beat Cop exits FX mode \, it will return to playing
+the saved FX sequence.;
+#X text 64 321 When the REC_FX button is ON \, the select FX is written
+to the FX sequence \, and it will be saved after it is turned off \,
+and after The Beat Cop leaves FX mode.;
+#X text 64 417 Edit the parameters for the corresponding FX.;
+#X text 64 447 Example: The top left FX is "PITCH" \, a pitch shifter
+effect. The top left grid button controls the amount of pitch shift
+for this effect.;
+#X text 43 512 To exit fx-mode \, press the FX button again \, or press
+any other modifier button (WRITE \, SOUND \, PATTERN \, BPM \, SAMPLES
+\, FUNCT).;
+#X text 43 131 **NOTE**: The WRITE button changes to the REC_FX button
+in this mode.;
+#X text 64 211 Select an FX to apply.;
+#X restore 624 372 pd \$0-fx-mode;
+#N canvas 4 50 658 900 \$0-funct-mode 0;
+#X obj 26 17 cnv 30 600 1900 empty empty funct-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 861 grid-buttons:;
+#X text 44 1707 grid-knobs:;
+#X text 43 101 This mode is activated by pressing the FUNCT button.
+;
+#X text 64 891 Manipulate the current pattern in several ways:;
+#X text 74 1211 L_SHFT: Shift LEFT (left shift 1 step) the gates \,
+frequencies \, retrigs.;
+#X text 74 1251 R_SHFT: Shift RIGHT (right shift 1 step) the gates
+\, frequencies \, retrigs.;
+#X text 74 1011 COPY: Enter paste-mode to copy/paste the current pattern.
+Note that the SND/PAT button currently does not effect paste mode \,
+and it will always copy/paste the whole pattern.;
+#X text 74 1301 RANDOMIZERS:;
+#X text 95 1481 PITCH: Randomize PITCH for the current sound \, or
+every sound in the entire pattern.;
+#X text 95 1441 GATE: Randomize GATES for the current sound \, or every
+sound in the entire pattern.;
+#X text 95 1401 VOLUME: Randomize VOLUME for the current sound \, or
+every sound in the entire pattern.;
+#X text 95 1521 RETRIG: Randomize RETRIG for the current sound \, or
+every sound in the entire pattern.;
+#X text 95 1561 START: Randomize SAMPLE START POSITION for the current
+sound \, or every sound in the entire pattern.;
+#X text 95 1601 LENGTH: Randomize SAMPLE LENGTH for the current sound
+\, or every sound in the entire pattern.;
+#X text 95 1641 FX: Randomize the FX sequence.;
+#X text 95 1671 PARAM: Randomize the FX PARAMETERS.;
+#X text 113 191 The CLEAR button will clear the entire pattern \, including
+the gate \, pitch \, retrig \, volume \, start position \, and length
+for all 16 sounds. It will also reset the FX chain \, FX params \,
+and the function params.;
+#X text 113 261 The CLEAR button does *not* modify the pattern chain
+\, global volume \, external volume \, swing \, bpm \, midi map \,
+or the loaded samples. It also does *not* reset the current step to
+0;
+#X text 113 491 This could also be refered to as "looper mode" but
+the state of The Beat Cop does not actually change \, and the pattern
+will still advance to follow the pattern chain.;
+#X text 113 691 The recording is currently limited to 1 sec at 44.1khz
+(44104 samples for 4 point interpolation). This is to help reduce hitching
+when recording on the fly while The Beat Cop is playing.;
+#X text 113 801 Note that the EXT_VOL controls how loud incoming audio
+is from IN-L~ and IN-R~ \, and this adjustment is applied before the
+sample is recorded.;
+#X text 43 131 **NOTE**:;
+#X text 75 1331 Note that the SND/PAT button affects the VOLUME \,
+GATE \, PITCH \, RETRIG \, START and LENGTH randomizers \, but it does
+not affect the FX or PARAM randomizers since FX are applied to the
+entire pattern.;
+#X text 64 1737 The knob labeled "METRO" controls the volume of the
+internal metronome.;
+#X text 64 1817 All other unlabeled grid knobs are currently unused.
+;
+#X text 74 1071 BLANK BUTTON: Currently unused.;
+#X text 44 55 This mode adds advanced functionality to The Beat Cop
+and offers several ways to manipulate the current pattern.;
+#X text 64 1777 The 8 knobs on the bottom of the grid adjust the strength
+of the corresponding randomizers.;
+#X text 43 1852 To exit funct-mode \, press the FUNCT button again
+\, or press any other modifier button (WRITE \, SOUND \, PATTERN \,
+BPM \, SAMPLES \, FX).;
+#X text 113 361 The MIDI-MAP button activates midi-mapper-mode.;
+#X text 113 421 The LIVE buttons turns on "one-shot recording" and
+switches to one-shot-mode. When "one-shot recording" is on \, The Beat
+Cop stores the gates that are played in one-shot-mode and saves them
+to the respective sound's sequence.;
+#X text 113 761 These recordings are saved to the folder /tbc/tbc-state-saves/tbc-#/recorded-samples/
+;
+#X text 93 161 CLEAR button (previously PATTERN button):;
+#X text 92 331 MIDI-MAP button (previously MIDI button):;
+#X text 93 391 LIVE button (previously PLAY button):;
+#X text 93 601 REC button (previously WRITE button):;
+#X text 74 921 SND/PAT: SOUND / PATTERN toggle. Controls whether to
+shift / randomize only the currently select sound \, or every sound
+in the whole pattern. Note that when PAT is selected \, the pattern
+shifts and reverse apply to every sound in the pattern *and* the FX
+sequence as well.;
+#X text 74 1171 D_SHFT: Shift DOWN (right shift 4 steps) the gates
+\, frequencies \, retrigs;
+#X text 74 1131 U_SHFT: Shift UP (left shift 4 steps) the gates frequencies
+\, retrigs.;
+#X text 74 1101 RVERSE: Reverse the gates \, frequencies \, retrigs.
+;
+#X text 113 551 The PLAY button will flash between the background color
+and the highlight color to indicate "one-shot recording" is on.;
+#X text 113 631 The REC button allows you to record a new sample into
+the currently selected sound using the two inlets IN-L~ and IN-R~;
+#X restore 624 392 pd \$0-funct-mode;
+#N canvas 0 50 658 546 \$0-paste-mode 0;
+#X obj 26 17 cnv 30 600 500 empty empty paste-mode 20 20 0 20 -233017
+-66577 0;
+#X text 44 195 grid-buttons:;
+#X text 44 277 grid-knobs:;
+#X text 44 55 This mode allows you to paste the currently selected
+pattern onto a new pattern. It will overwrite the pattern that was
+previously at the selected location \, and it will switch to the new
+location.;
+#X text 43 131 This mode is activated by pressing the FUNCT button
+\, then pressing the COPY button.;
+#X text 64 225 Select which pattern to paste the current pattern onto.
+The current pattern is indicated by the flashing button.;
+#X text 64 307 Currently the grid knobs serve no function in paste-mode.
+;
+#X text 44 445 To exit paste-mode \, select a pattern to paste to \,
+or press any modifier button (WRITE \, SOUND \, PATTERN \, BPM \, SAMPLES
+\, FUNCT \, FX);
+#X restore 624 412 pd \$0-paste-mode;
+#N canvas 0 50 658 546 \$0-midi-mapper-mode 0;
+#X obj 26 17 cnv 30 600 500 empty empty midi-mapper-mode 20 20 0 20
+-233017 -66577 0;
+#X text 44 195 grid-buttons:;
+#X text 44 267 grid-knobs:;
+#X text 44 55 This mode allows you to easily create a new midi map
+for ONE midi controller.;
+#X text 43 135 This mode is activated by pressing the FUNCT button
+\, then pressing the MIDI_MAP button. (Previously the MIDI button)
+;
+#X text 64 225 Currently serve no function.;
+#X text 64 297 Currently serve no function.;
+#X text 44 365 To exit midi-mapper-mode \, press the red EXIT button
+in the midi-mapper window \, or click the flashing EXIT button on The
+Beat Cop.;
+#X text 44 95 Additional information is provided in the midi mapper
+window.;
+#X restore 624 432 pd \$0-midi-mapper-mode;
+#X msg 14 723 \; pd-\$1 vis \$2;
+#X msg 269 343 0;
+#X obj 216 319 t b b b;
+#X msg 216 343 1;
+#X obj 466 409 t b;
+#X obj 75 384 t f;
+#X obj 14 688 pack s 1;
+#X obj 14 380 symbol;
+#X obj 14 256 t a b a a;
+#X obj 14 355 del 200;
+#X obj 487 528 r \$0-open-outlet-help-s;
+#X msg 487 713 \; pd-\$1 vis \$2;
+#X obj 487 688 pack s f;
+#N canvas 18 50 658 769 \$0-inlet-help 0;
+#X obj 26 17 cnv 30 600 730 empty empty inlet-help 20 20 0 20 -233017
+-66577 0;
+#X text 43 185 STEP:;
+#X text 43 265 PATTERN:;
+#X text 43 405 GATES:;
+#X text 44 55 IN-L~;
+#X text 44 75 IN-R~;
+#X text 114 65 Left and right audio inlet of The Beat Cop.;
+#X text 113 93 The volume of the audio that runs through these inlets
+is controlled by the EXT_VOL knob.;
+#X text 113 133 Audio that runs through these inlets can be recorded
+into the current sound by pressing FUNCT then REC. This audio is effected
+by the FX chain after it is recorded.;
+#X text 73 285 Input to assign the current pattern for TBC. If a list
+of numbers is supplied \, it is assigned as the pattern chain.;
+#X text 73 425 Input gates for any of the 16 sounds. Simply send in
+the number of the sound that you want to trigger.;
+#X text 43 475 TUNE:;
+#X text 73 555 This value is used to multiply the current frequency.
+0.5 would half the frequency \, 1 would return to normal \, 2 would
+double the frequency \, etc.;
+#X text 43 645 FX:;
+#X text 73 665 FX input for the current step in the pattern.;
+#X text 73 205 Input to assign the current step of TBC. This input
+only works if if the EXT_STEP button is on \, and the PLAY button is
+on.;
+#X text 73 325 When the EXT_STEP is on \, the pattern can only change
+if the PATTERN inlet is banged. This is to allow the user to control
+when the pattern should switch \, even if the end of the pattern isn't
+reached.;
+#X text 73 495 Tune the frequency of any of the 16 sounds. The expected
+input is the number of the sound that you want to tune \, followed
+by the value.;
+#X msg 492 613 4 0.5;
+#X text 88 613 Example: Multiply half the frequency of sound 4 ->;
+#X text 73 695 The FX input will be recorded to the pattern chain if
+FX_REC is turned on.;
+#X restore 624 472 pd \$0-inlet-help;
+#N canvas 30 52 658 717 \$0-outlet-help 0;
+#X obj 26 17 cnv 30 600 680 empty empty outlets-help 20 20 0 20 -233017
+-66577 0;
+#X text 44 55 OUT-L~;
+#X text 44 75 OUT-R~;
+#X text 43 175 STEP:;
+#X text 43 255 PATTERN:;
+#X text 73 275 The current pattern for The Beat Cop. This is the "\$0-current-pattern-early"
+\, so any calculations using this value can happen before a new pattern
+is applied.;
+#X text 73 195 The current step for The Beat Cop. This is the "\$0-current-step-early"
+\, so any calculations using this value can happen before the new step
+is performed.;
+#X text 43 335 GATES:;
+#X text 73 415 ON = 1 \, OFF = 0;
+#X text 43 445 FREQS:;
+#X text 73 355 The gate at the current step for all 16 sounds. These
+gates all come out individually \, and can be routed using the [route]
+object to select a specific sound.;
+#X text 73 525 Min freq: 220hz. Max freq: 880hz.;
+#X text 43 555 EXP:;
+#X text 73 615 All sends / recieves from TBC are named using the \$0
+\, so this value is needed to send / recieve data from TBC.;
+#X text 114 65 Left and right audio outlet of The Beat Cop.;
+#X text 113 93 Mono samples loaded into The Beat Cop will play out
+of both the left and right outlets \, but if you *record* a sample
+using only one audio inlet \, it will only play out of the corresponding
+outlet.;
+#X text 73 465 The frequency at the current step for all 16 sounds.
+These freqs all come out individually \, and can be routed using the
+[route] object to select a specific sound.;
+#X text 73 575 The "expander" outlet for The Beat Cop. This outputs
+the \$0 (patch ID) for this instance of TBC.;
+#X text 73 655 Open one of the expanders in the tbc folder for more
+info.;
+#X restore 624 492 pd \$0-outlet-help;
+#X obj 487 663 symbol \$0-outlet-help;
+#X obj 487 573 t b b b b;
+#X msg 510 596 1, f 1;
+#X msg 556 596 0, f 1;
+#X obj 533 643 symbol \$0-inlet-help;
+#X obj 577 573 t b b b b;
+#X msg 600 596 1, f 1;
+#X msg 646 596 0, f 1;
+#X obj 577 548 r \$0-open-inlet-help-s;
+#X obj 83 289 sel one-shot-mode;
+#X obj 14 226 spigot;
+#X obj 59 146 loadbang;
+#X obj 59 171 del 500;
+#X msg 59 196 1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 1 1 1;
+#X connect 3 0 52 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 2 8 0;
+#X connect 5 3 9 0;
+#X connect 5 4 10 0;
+#X connect 5 5 11 0;
+#X connect 5 6 12 0;
+#X connect 5 7 13 0;
+#X connect 5 8 14 0;
+#X connect 5 9 15 0;
+#X connect 6 0 33 0;
+#X connect 7 0 33 0;
+#X connect 8 0 33 0;
+#X connect 9 0 33 0;
+#X connect 10 0 33 0;
+#X connect 11 0 33 0;
+#X connect 12 0 33 0;
+#X connect 13 0 33 0;
+#X connect 14 0 33 0;
+#X connect 15 0 33 0;
+#X connect 28 0 32 0;
+#X connect 29 0 30 0;
+#X connect 29 1 31 0;
+#X connect 29 2 28 0;
+#X connect 30 0 32 0;
+#X connect 31 0 15 0;
+#X connect 31 0 14 0;
+#X connect 31 0 13 0;
+#X connect 31 0 12 0;
+#X connect 31 0 11 0;
+#X connect 31 0 10 0;
+#X connect 31 0 9 0;
+#X connect 31 0 8 0;
+#X connect 31 0 7 0;
+#X connect 31 0 6 0;
+#X connect 32 0 33 1;
+#X connect 33 0 27 0;
+#X connect 34 0 5 0;
+#X connect 35 0 51 1;
+#X connect 35 1 36 0;
+#X connect 35 2 34 1;
+#X connect 35 3 51 0;
+#X connect 36 0 34 0;
+#X connect 37 0 43 0;
+#X connect 39 0 38 0;
+#X connect 42 0 39 0;
+#X connect 43 0 42 0;
+#X connect 43 1 44 0;
+#X connect 43 2 46 0;
+#X connect 43 3 45 0;
+#X connect 44 0 39 1;
+#X connect 45 0 39 1;
+#X connect 46 0 39 0;
+#X connect 47 0 46 0;
+#X connect 47 1 48 0;
+#X connect 47 2 42 0;
+#X connect 47 3 49 0;
+#X connect 48 0 39 1;
+#X connect 49 0 39 1;
+#X connect 50 0 47 0;
+#X connect 51 1 29 0;
+#X connect 52 0 35 0;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 55 0 52 1;
+#X restore 1014 505 pd text-box-display;
+#X obj 102 508 declare -path tbc;
+#X obj 550 534 dac~;
+#X obj 10 74 cnv 15 520 420 empty empty INFO 20 20 0 20 -233017 -66577
+0;
+#X text 8 55 ___________________________________;
+#X text 29 112 THE BEAT COP (TBC) is a stereo drum machine. You can
+load or record your own samples into it. It's made in Pure Data Vanilla
+\, and you can build patches to control it!;
+#X text 26 277 Each grid button is often associated with the coresponding
+grid knob. For example \, in the default mode (one-shot-mode) the top
+left grid button plays sound 0 \, and the top left grid knob controls
+the volume for sound 0;
+#X obj 24 508 loadbang;
+#X msg 24 533 \; pd dsp 1;
+#X text 28 177 The 4 x 4 grid of buttons on the left of TBC is refered
+to as the "grid-buttons".;
+#X text 26 227 The 4 x 4 grid of knobs on the right of TBC is refered
+to as the "grid-knobs".;
+#X text 8 55 THE BEAT COP interactive help file!;
+#X text 28 377 Click on the modifier buttons (black buttons) on THE
+BEAT COP to learn more! You probably want to start with the SAMPLES
+button \, to load some samples!---->;
+#X obj 1031 94 bng 30 250 50 0 \$0-open-inlet-help-s \$0-open-inlet-help-r
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 1031 464 bng 30 250 50 0 \$0-open-outlet-help-s \$0-open-outlet-help-r
+empty 17 7 0 10 -228856 -1 -1;
+#X text 1063 88 INLETS help;
+#X text 1063 99 <----------;
+#X text 1064 468 OUTLETS help;
+#X text 1064 478 <-----------;
+#X floatatom 705 504 5 0 0 0 - - -, f 5;
+#X floatatom 782 504 5 0 0 0 - - -, f 5;
+#X obj 859 585 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X obj 936 535 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X floatatom 705 47 5 0 0 0 - - -, f 5;
+#X obj 552 25 osc~ 220;
+#X msg 782 44 0 0 3 4;
+#X floatatom 859 47 5 0 0 0 - - -, f 5;
+#X obj 936 44 pack f f;
+#X floatatom 936 17 3 0 0 0 - - -, f 3;
+#X floatatom 969 17 5 0 0 0 - - -, f 5;
+#X floatatom 1014 47 5 0 0 0 - - -, f 5;
+#X floatatom 859 610 5 0 0 0 - - -, f 5;
+#X floatatom 936 560 5 0 0 0 - - -, f 5;
+#X text 11 582 www.beatcop.club;
+#X obj 551 74 THE_BEAT_COP 9999;
+#X text 10 602 v1.0.0 Claude Barker \, 2018 Released under GNU GPLv3
+;
+#X connect 7 0 8 0;
+#X connect 21 0 31 0;
+#X connect 22 0 32 0;
+#X connect 23 0 34 2;
+#X connect 24 0 34 0;
+#X connect 24 0 34 1;
+#X connect 25 0 34 3;
+#X connect 26 0 34 4;
+#X connect 27 0 34 5;
+#X connect 28 0 27 0;
+#X connect 29 0 27 1;
+#X connect 30 0 34 6;
+#X connect 34 0 2 0;
+#X connect 34 1 2 1;
+#X connect 34 2 19 0;
+#X connect 34 3 20 0;
+#X connect 34 4 21 0;
+#X connect 34 5 22 0;
+#X connect 34 6 0 0;

@@ -1,0 +1,16 @@
+../tbc-demo-samples/tbc-stereo-demo-samples/tbc-kick-door0.wav;
+F:/TheBeatCop/tbc-demo-samples/thunder0.wav;
+F:/TheBeatCop/tbc-demo-samples/runthe5.wav;
+F:/TheBeatCop/tbc-demo-samples/have7.wav;
+F:/TheBeatCop/tbc-demo-samples/kick0.wav;
+F:/TheBeatCop/tbc-demo-samples/door-updated58.wav;
+F:/TheBeatCop/tbc-demo-samples/tbc-bass0.wav;
+F:/TheBeatCop/tbc-demo-samples/shaker-updated63.wav;
+F:/TheBeatCop/tbc-demo-samples/snare2.wav;
+F:/TheBeatCop/tbc-demo-samples/stick-updated66.wav;
+F:/TheBeatCop/tbc-demo-samples/woodblock-updated68.wav;
+F:/TheBeatCop/tbc-demo-samples/woodblock-updated70.wav;
+F:/TheBeatCop/tbc-demo-samples/tbc-page-flip0.wav;
+F:/TheBeatCop/tbc-demo-samples/tbc-twang1.wav;
+F:/TheBeatCop/tbc-demo-samples/switch-updated67.wav;
+F:/TheBeatCop/tbc-demo-samples/door-updated59.wav;

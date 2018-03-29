@@ -1,0 +1,70 @@
+#N canvas 693 270 493 645 10;
+#X floatatom 246 255 5 0 0 0 - - -, f 5;
+#X obj 82 501 spigot 1;
+#X floatatom 101 267 5 0 0 0 - - -, f 5;
+#X obj 246 301 sel;
+#X msg 156 414 -1;
+#X obj 135 385 spigot 1;
+#X obj 246 326 t b b;
+#X msg 206 351 1, f 1;
+#X msg 188 351 0, f 1;
+#X obj 101 443 t b;
+#X obj 34 229 t f;
+#X floatatom 82 526 5 0 0 0 - - -, f 5;
+#X obj 82 576 outlet;
+#X obj 135 443 !=;
+#X msg 101 468 0;
+#X obj 82 192 inlet key;
+#X obj 246 192 inlet keyup;
+#X obj 212 574 outlet unavailable;
+#X obj 212 481 spigot 0;
+#X obj 265 405 == 0;
+#X obj 82 229 t f f f;
+#X obj 246 214 route reset;
+#X msg 311 256 -1;
+#X obj 212 439 !=;
+#X obj 212 503 sel 1;
+#X text 22 111 If another key is pressed \, and this key is still being
+held down \, and a bang out of the "unavailable" outlet \, to allow
+the index counter to go to the next instance of this abstraction.;
+#X text 22 9 Store a key that was pressed. If a key is held down \,
+[key] will keep getting bangs \, so we ignore those until [keyup] is
+received for the stored key. NOTE" This worked in pd 0.46 when I created
+this patch \, but as of 0.48 \, key AND keyup are repeadly pressed
+when a key is held down \, so there is no way that I know of to prevent
+this.;
+#X connect 0 0 3 0;
+#X connect 1 0 10 0;
+#X connect 1 0 11 0;
+#X connect 1 0 23 1;
+#X connect 2 0 3 1;
+#X connect 2 0 8 0;
+#X connect 2 0 9 0;
+#X connect 2 0 13 1;
+#X connect 3 0 6 0;
+#X connect 4 0 13 1;
+#X connect 5 0 13 0;
+#X connect 6 0 7 0;
+#X connect 6 1 4 0;
+#X connect 7 0 5 1;
+#X connect 7 0 19 0;
+#X connect 8 0 5 1;
+#X connect 8 0 19 0;
+#X connect 9 0 14 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 13 0 1 1;
+#X connect 14 0 1 1;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 18 0 24 0;
+#X connect 19 0 18 1;
+#X connect 20 0 1 0;
+#X connect 20 1 5 0;
+#X connect 20 2 23 0;
+#X connect 21 0 22 0;
+#X connect 21 1 0 0;
+#X connect 22 0 3 1;
+#X connect 22 0 13 1;
+#X connect 23 0 18 0;
+#X connect 24 0 17 0;

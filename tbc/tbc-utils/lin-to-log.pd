@@ -1,0 +1,13 @@
+#N canvas 241 256 549 273 12;
+#X obj 27 221 outlet;
+#X obj 27 131 inlet;
+#X obj 27 191 clip 0 1;
+#X obj 27 161 expr log10(1-$f1)*-0.5;
+#X text 23 86 This calculation isn't exact \, but it's close enough.
+;
+#X text 23 46 This is used to convert the linear knobs into log values
+for volume control.;
+#X text 23 26 Linear 0 - 1 converted to log;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
