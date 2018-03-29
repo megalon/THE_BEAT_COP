@@ -22,7 +22,7 @@ Platform specific instructions below.
 
 _________
 
-## Windows    
+## Windows / Mac OS
 **Step 1: Install PD Vanilla version 0.48 or higher**
 
 http://puredata.info/downloads/pure-data 
@@ -37,7 +37,7 @@ On the menubar select "Help" --> "Find externals"
 
 In the window that opens, search for "flatgui"
 
-Three or more items should appear in the list below the search bar. Select the Windows zip file (it's the one that isn't greyed out). When you click on the filename it should begin to download then extract the external.
+Three or more items should appear in the list below the search bar. Select the one that isn't greyed out. When you click on the filename it should begin to download then extract the external.
 
 When it has finished extracting, it will show 100% and say that it was successful. You might have to scroll down the text box.
 
@@ -47,53 +47,11 @@ When it has finished extracting, it will show 100% and say that it was successfu
 
 Open the file "basic-patch.pd" in Pure Data by selecting "File" --> "Open" from the pd menu bar, or by double clicking on it in file explorer.
 
-
-
 If you want to use THE BEAT COP in other pd patches aside from the test patches I've included, you can create a new patch in THE BEAT COP release folder, or declare the path to the "tbc" folder in your patch.
 
 To declare the path to the tbc folder in your pd patch, simply create a new object [declare -path C:/full/path/to/tbc] and then create a new object [THE_BEAT_COP] and THE BEAT COP should appear.
 
 _________
-
-
-## Mac OS
-
-
-I don't have access to a Mac in order to test THE BEAT COP, but these instructions should work out. I will update this readme if changes need to be made.
-
-
-
-**Step 1: Install PD Vanilla version 0.48 or higher**
-
-http://puredata.info/downloads/pure-data 
-
-
-
-**Step 2: Install the flatGUI external**
-
-Once pd is installed, launch the pd application. The console window should appear.
-
-On the menubar select "Help" --> "Find externals"
-
-In the window that opens, search for "flatgui"
-
-Three or more items should appear in the list below the search bar. Select the option that isn't greyed out. When you click on the filename it should begin to download then extract the external.
-
-When it has finished extracting, it will show 100% and say that it was successful. (You might have to scroll down the text box to see this.)
-
-
-
-**Step 3: Open THE BEAT COP in pd**
-
-Open the file "basic-test.pd" in Pure Data by double clicking on it in file explorer, or by selecting "File" --> "Open" from the pd menu bar.
-
-If you want to use THE BEAT COP in other pd patches aside from the test patches I've included, you can create a new patch in THE BEAT COP release folder, or declare the path to the "tbc" folder.
-
-To declare the path to the tbc folder in your new pd patch, simply create a new object [declare -path ~/full/path/to/tbc] then you can simply create a new object [THE_BEAT_COP] and THE BEAT COP should appear.
-
-
-_________
-
 
 ## Linux
 
@@ -172,6 +130,8 @@ There is (at the time of this writing) no build for the flatgui extension on ARM
 
 
 In my experience "apt-get install puredata" downloads vanilla version 0.46.7-3, which is outdated and will not work for THE BEAT COP. (Version 0.48 has some list processing functions that I use.)
+
+________
 
 # That's cool, but how do I use it?
 
