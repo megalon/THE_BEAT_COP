@@ -2,9 +2,7 @@
 
 ![THE BEAT COP](http://thebeatcop.club/images/tbc-demo.gif)
 
-THE BEAT COP (TBC) is a free drum machine made in Pure Data Vanilla 0.48                               
-THE BEAT COP is released under the GNU GPLv3 license.    
-THIS SOFTWARE IS PROVIDED WITHOUT WARRANTY!              
+*THE BEAT COP* (TBC) is a free drum machine made in Pure Data Vanilla 0.48 and released under the GNU GPLv3 license.    
 
 For more information visit:                                  
 http://www.thebeatcop.club                               
@@ -56,6 +54,8 @@ If you want to use THE BEAT COP in other pd patches aside from the test patches 
 To declare the path to the tbc folder in your pd patch, simply create a new object [declare -path C:/full/path/to/tbc] and then create a new object [THE_BEAT_COP] and THE BEAT COP should appear.
 
 _________
+
+
 ### Mac OS
 
 
@@ -69,7 +69,7 @@ http://puredata.info/downloads/pure-data
 
 
 
-**Step 3: Install the flatGUI external**
+**Step 2: Install the flatGUI external**
 
 Once pd is installed, launch the pd application. The console window should appear.
 
@@ -93,6 +93,8 @@ To declare the path to the tbc folder in your new pd patch, simply create a new 
 
 
 _________
+
+
 ### Linux
 
 **Step 1: Download lastest source code for PD Vanilla**
@@ -170,3 +172,11 @@ There is (at the time of this writing) no build for the flatgui extension on ARM
 
 
 In my experience "apt-get install puredata" downloads vanilla version 0.46.7-3, which is outdated and will not work for THE BEAT COP. (Version 0.48 has some list processing functions that I use.)
+
+## Cool, but how do I use it?
+
+THE BEAT COP includes a comprehensive, interactive help file THE_BEAT_COP-help.pd
+
+You can also check out the demo videos that I've made on my youtube channel, [MegalonPureData](https://www.youtube.com/channel/UCRTrsMZ6f6HXOpgBpMisBiQ/videos)
+
+I hope to make a tutorial series soon.
