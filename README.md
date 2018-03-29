@@ -1,3 +1,5 @@
+# THE_BEAT_COP
+A sampler drum machine made in Pure Data vanilla. For more info, visit
 
 .=================================================================.
 |                                                                 |
@@ -106,5 +108,3 @@ Mac OS:
 
     If you want to use The Beat Cop in other pd patches aside from the test patches I've included, you can create a new patch in The Beat Cop release folder, or declare the path to the "tbc" folder.
     To declare the path to the tbc folder in your new pd patch, simply create a new object [declare -path ~/full/path/to/tbc] then you can simply create a new object [THE_BEAT_COP] and The Beat Cop should appear.
-
-
