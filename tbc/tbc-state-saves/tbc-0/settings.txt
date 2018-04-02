@@ -1,10 +1,10 @@
 ----Settings-------Do-Not-Rearrange----;
 volume 1;
-ext_vol 0.76931;
-bpm 109.655;
+ext_vol 0.586207;
+bpm 110.648;
 swing 0;
 current_pattern 0;
-current_sound 0;
+current_sound 15;
 display_animation 1;
 display_waveform 1;
 display_grid_button_labels 1;

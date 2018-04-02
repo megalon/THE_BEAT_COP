@@ -1,4 +1,4 @@
-#N struct 1797-template float x float y float rgb;
+#N struct 1192-template float x float y float rgb;
 #N canvas 548 50 932 871 12;
 #X declare -path tbc;
 #X obj 252 658 dac~;
