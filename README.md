@@ -1,16 +1,8 @@
 # THE BEAT COP
 
-![THE BEAT COP](http://thebeatcop.club/images/tbc-demo.gif)
+![](https://i.imgur.com/d0R6KNK.gif)
 
-*THE BEAT COP* (TBC) is a free drum machine made in Pure Data Vanilla 0.48 and released under the GNU GPLv3 license.    
-
-For more information visit:                                  
-http://www.thebeatcop.club                               
-https://github.com/megalon                               
-
-Author:                                                      
-Claude Barker (aka megalon)                              
-tbc.claude@gmail.com                                     
+*THE BEAT COP* (TBC) is a free drum machine made in Pure Data Vanilla 0.48 and released under the GNU GPLv3 license.                                            
 
 _________
 
@@ -24,6 +16,8 @@ _________
 
 ## Windows / Mac OS
 **Step 1: Install PD Vanilla version 0.48 or higher**
+
+Please install the 32bit version, since FlatGUI is only available as a 32bit extension.
 
 http://puredata.info/downloads/pure-data 
 
