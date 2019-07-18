@@ -1,11 +1,11 @@
-#N struct 1991-template float x float y float rgb;
+#N struct 2455-template float x float y float rgb;
 #N canvas 202 50 1298 632 12;
 #X declare -path tbc;
 #N canvas 185 122 815 769 text-box-display 0;
 #X obj 14 14 inlet;
 #X obj 14 99 tbc-utils/receive-generator;
 #X obj 14 39 t b f;
-#X symbolatom 14 124 30 0 0 0 - - -, f 30;
+#X symbolatom 14 124 30 0 0 0 - - -;
 #X msg 14 69 symbol global-state-off;
 #X obj 14 411 sel one-shot-mode write-mode sound-mode pattern-mode
 bpm-mode samples-mode fx-mode funct-mode paste-mode midi-mapper-mode
@@ -92,7 +92,7 @@ having to select it first.;
 button again \, or press any other modifier button (WRITE \, PATTERN
 \, BPM \, SAMPLES \, FUNCT \, FX);
 #X restore 624 292 pd \$0-sound-mode;
-#N canvas 0 50 658 736 \$0-pattern-mode 0;
+#N canvas 44 110 658 736 \$0-pattern-mode 1;
 #X obj 26 17 cnv 30 600 700 empty empty pattern-mode 20 20 0 20 -233017
 -66577 0;
 #X text 44 175 grid-buttons:;
@@ -117,8 +117,6 @@ grid button. For example \, if you pressed the top left grid button
 (grid-btn-0) \, you would select pattern 0;
 #X text 43 131 The flashing grid button indicates which pattern is
 currently playing.;
-#X text 64 315 You can play the same pattern multiple times by simply
-pressing its button multiple times.;
 #X text 64 355 You can play any pattern as many times as you want \,
 there is no limit to the pattern chain \, but it will currently overflow
 the grid button label and create a long string of text that extends
@@ -128,6 +126,8 @@ change when the PATTERN inlet is banged. This is due to the fact that
 you can never know when a pattern has "finished" when the steps can
 be played in an arbitrary order. You must explicitly switch pattern
 by banging the pattern inlet.;
+#X text 64 315 You can play the same pattern multiple times by simply
+pressing its button multiple times.;
 #X restore 624 312 pd \$0-pattern-mode;
 #N canvas 6 50 658 671 \$0-bpm-mode 0;
 #X obj 26 17 cnv 30 600 630 empty empty bpm-mode 20 20 0 20 -233017
@@ -357,7 +357,6 @@ window.;
 -66577 0;
 #X text 43 185 STEP:;
 #X text 43 265 PATTERN:;
-#X text 43 405 GATES:;
 #X text 44 55 IN-L~;
 #X text 44 75 IN-R~;
 #X text 114 65 Left and right audio inlet of The Beat Cop.;
@@ -387,9 +386,11 @@ reached.;
 input is the number of the sound that you want to tune \, followed
 by the value.;
 #X msg 492 613 4 0.5;
-#X text 88 613 Example: Multiply half the frequency of sound 4 ->;
 #X text 73 695 The FX input will be recorded to the pattern chain if
 FX_REC is turned on.;
+#X text 43 405 TRIGS:;
+#X text 88 613 Example: Multiply the frequency of sound 4 by half ->
+;
 #X restore 624 472 pd \$0-inlet-help;
 #N canvas 30 52 658 717 \$0-outlet-help 0;
 #X obj 26 17 cnv 30 600 680 empty empty outlets-help 20 20 0 20 -233017
@@ -543,40 +544,39 @@ empty 17 7 0 10 -228856 -1 -1;
 #X text 1063 99 <----------;
 #X text 1064 468 OUTLETS help;
 #X text 1064 478 <-----------;
-#X floatatom 705 504 5 0 0 0 - - -, f 5;
-#X floatatom 782 504 5 0 0 0 - - -, f 5;
+#X floatatom 705 504 5 0 0 0 - - -;
+#X floatatom 782 504 5 0 0 0 - - -;
 #X obj 859 585 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 936 535 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
-#X floatatom 705 47 5 0 0 0 - - -, f 5;
+#X floatatom 705 47 5 0 0 0 - - -;
 #X obj 552 25 osc~ 220;
 #X msg 782 44 0 0 3 4;
-#X floatatom 859 47 5 0 0 0 - - -, f 5;
+#X floatatom 859 47 5 0 0 0 - - -;
 #X obj 936 44 pack f f;
-#X floatatom 936 17 3 0 0 0 - - -, f 3;
-#X floatatom 969 17 5 0 0 0 - - -, f 5;
-#X floatatom 1014 47 5 0 0 0 - - -, f 5;
-#X floatatom 859 610 5 0 0 0 - - -, f 5;
-#X floatatom 936 560 5 0 0 0 - - -, f 5;
-#X text 11 582 www.beatcop.club;
+#X floatatom 936 17 3 0 0 0 - - -;
+#X floatatom 969 17 5 0 0 0 - - -;
+#X floatatom 1014 47 5 0 0 0 - - -;
+#X floatatom 859 610 5 0 0 0 - - -;
+#X floatatom 936 560 5 0 0 0 - - -;
 #X obj 551 74 THE_BEAT_COP 9999;
-#X text 10 602 v1.0.0 Claude Barker \, 2018 Released under GNU GPLv3
-;
+#X text 11 582 https://github.com/megalon/THE_BEAT_COP;
+#X text 10 602 v1.0.0 Megalon \, 2019 Released under GNU GPLv3;
 #X connect 7 0 8 0;
 #X connect 21 0 31 0;
 #X connect 22 0 32 0;
-#X connect 23 0 34 2;
-#X connect 24 0 34 0;
-#X connect 24 0 34 1;
-#X connect 25 0 34 3;
-#X connect 26 0 34 4;
-#X connect 27 0 34 5;
+#X connect 23 0 33 2;
+#X connect 24 0 33 0;
+#X connect 24 0 33 1;
+#X connect 25 0 33 3;
+#X connect 26 0 33 4;
+#X connect 27 0 33 5;
 #X connect 28 0 27 0;
 #X connect 29 0 27 1;
-#X connect 30 0 34 6;
-#X connect 34 0 2 0;
-#X connect 34 1 2 1;
-#X connect 34 2 19 0;
-#X connect 34 3 20 0;
-#X connect 34 4 21 0;
-#X connect 34 5 22 0;
-#X connect 34 6 0 0;
+#X connect 30 0 33 6;
+#X connect 33 0 2 0;
+#X connect 33 1 2 1;
+#X connect 33 2 19 0;
+#X connect 33 3 20 0;
+#X connect 33 4 21 0;
+#X connect 33 5 22 0;
+#X connect 33 6 0 0;
