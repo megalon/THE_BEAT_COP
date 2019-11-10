@@ -1,4 +1,4 @@
-#N struct 3888-template float x float y float w float h;
+#N struct 1586-template float x float y float rgb;
 #N canvas 548 50 932 871 12;
 #X declare -path tbc;
 #X obj 252 658 dac~;
@@ -7,7 +7,7 @@
 #X obj 10 9 declare -path tbc;
 #X obj 229 696 record-file;
 #X floatatom 382 651 5 0 0 0 - - -;
-#X obj 229 213 THE_BEAT_COP;
+#X obj 228 214 THE_BEAT_COP;
 #X connect 2 0 1 0;
 #X connect 6 0 0 0;
 #X connect 6 0 4 0;
