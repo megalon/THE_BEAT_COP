@@ -1,4 +1,4 @@
-#N struct 2261-template float x float y float rgb;
+#N struct 1195-template float x float y float rgb;
 #N canvas 345 163 1380 797 12;
 #X obj 0 123 cnv 15 470 288 empty \$0-cnv-grid empty 20 12 0 14 -71583
 -262144 0;
@@ -266,9 +266,9 @@
 #X connect 55 0 22 0;
 #X restore 735 158 pd clock;
 #X obj 170 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-0-s \$0-knob-0-r
-VOLUME -3 38 0 10 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+VOLUME -3 38 0 10 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 220 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-1-s \$0-knob-1-r
-EXT_VOL -4 38 0 10 4.12042e+007 4.12042e+007 4.12042e+007 1700 1;
+EXT_VOL -4 38 0 10 4.08058e+007 4.08058e+007 4.08058e+007 1700 1;
 #X obj 20 141 tgl 30 0 \$0-sound-btn-s \$0-sound-btn-r SOUND 0 38 0
 10 -1 -71583 -1 0 1;
 #X obj 70 141 tgl 30 0 \$0-pattern-btn-s \$0-pattern-btn-r PATTERN
@@ -8154,7 +8154,7 @@ is below;
 #X connect 58 0 57 0;
 #X connect 59 0 57 1;
 #X restore 871 247 pd bpm-button;
-#N canvas 65 512 720 276 midi-control 0;
+#N canvas 768 360 720 276 midi-control 0;
 #N canvas 134 332 801 560 color-grid-buttons 0;
 #X obj 63 54 r \$0-packed-grid-buttons;
 #X obj 63 408 spigot;
@@ -9722,7 +9722,6 @@ subpatch;
 #X obj 35 247 text get \$0-midi-map;
 #X obj 118 194 + 1;
 #X obj 35 162 until;
-#X obj 35 276 > 0;
 #X obj 35 301 sel 0;
 #X obj 35 217 t f f f;
 #X obj 35 358 text set \$0-midi-map;
@@ -9735,26 +9734,27 @@ subpatch;
 #X msg 35 83 46;
 #X obj 35 192 f 0;
 #X msg 72 132 0;
-#X connect 0 0 14 0;
-#X connect 1 0 4 0;
-#X connect 2 0 15 1;
-#X connect 3 0 15 0;
-#X connect 4 0 5 0;
-#X connect 5 0 12 0;
-#X connect 6 0 1 0;
-#X connect 6 1 7 1;
-#X connect 6 2 2 0;
-#X connect 6 2 11 0;
-#X connect 8 0 12 1;
-#X connect 10 0 3 0;
-#X connect 10 1 16 0;
-#X connect 11 0 13 0;
-#X connect 11 1 8 0;
-#X connect 12 0 7 0;
-#X connect 13 0 12 1;
-#X connect 14 0 10 0;
-#X connect 15 0 6 0;
-#X connect 16 0 15 1;
+#X obj 35 276 > -1;
+#X connect 0 0 13 0;
+#X connect 1 0 16 0;
+#X connect 2 0 14 1;
+#X connect 3 0 14 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 5 1 6 1;
+#X connect 5 2 2 0;
+#X connect 5 2 10 0;
+#X connect 7 0 11 1;
+#X connect 9 0 3 0;
+#X connect 9 1 15 0;
+#X connect 10 0 12 0;
+#X connect 10 1 7 0;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 9 0;
+#X connect 14 0 5 0;
+#X connect 15 0 14 1;
+#X connect 16 0 4 0;
 #X restore 52 524 pd check-midi-map;
 #X msg 17 557 clear;
 #X obj 256 288 s \$0-midi-control-btn-r;
@@ -15269,37 +15269,37 @@ empty -2 -8 0 10 -1 -262144 -1 0 1;
 #X obj 261 301 cnv 10 200 90 \$0-cnv-grid-knobs-label-s \$0-cnv-grid-knobs-label-r
 VOLUME 80 80 0 10 -71583 -1 0;
 #X obj 270 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-0-s \$0-grid-knob-0-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2626 1;
 #X obj 320 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-1-s \$0-grid-knob-1-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 370 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-2-s \$0-grid-knob-2-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 420 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-3-s \$0-grid-knob-3-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 270 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-4-s \$0-grid-knob-4-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 320 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-5-s \$0-grid-knob-5-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 370 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-6-s \$0-grid-knob-6-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 420 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-7-s \$0-grid-knob-7-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 270 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-8-s \$0-grid-knob-8-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 320 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-9-s \$0-grid-knob-9-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 370 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-10-s \$0-grid-knob-10-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 420 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-11-s \$0-grid-knob-11-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 270 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-12-s \$0-grid-knob-12-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 320 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-13-s \$0-grid-knob-13-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2877 1;
 #X obj 370 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-14-s \$0-grid-knob-14-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2900 1;
 #X obj 420 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-15-s \$0-grid-knob-15-r
-empty 8 38 1 8 4.12042e+007 4.12042e+007 4.12042e+007 2900 1;
+empty 8 38 1 8 4.08058e+007 4.08058e+007 4.08058e+007 2877 1;
 #X obj 735 80 r \$0-playing;
 #X obj 0 0 tbc-images/startup-animation;
 #X obj 817 628 r \$0-current-step-early;
@@ -17432,7 +17432,7 @@ later;
 #X text 23 728 This software is provided WITHOUT WARRANTY under the
 GNU GPLv3 license.;
 #X text 22 528 https://github.com/megalon/THE_BEAT_COP;
-#X text 22 452 THE BEAT COP (TBC) V0.9.2 by Megalon 2019;
+#X text 22 452 THE BEAT COP (TBC) V0.9.3 by Megalon 2019;
 #X connect 12 0 1 1;
 #X connect 22 0 12 0;
 #X connect 27 0 34 0;
