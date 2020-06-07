@@ -1,5 +1,5 @@
 #N struct 1193-template float x float y float rgb;
-#N canvas 345 163 1380 797 12;
+#N canvas 377 124 1380 797 12;
 #X obj 0 123 cnv 15 470 288 empty \$0-cnv-grid empty 20 12 0 14 -71583
 -262144 0;
 #N canvas 198 58 704 889 clock 0;
@@ -266,7 +266,7 @@
 #X connect 55 0 22 0;
 #X restore 735 158 pd clock;
 #X obj 170 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-0-s \$0-knob-0-r
-VOLUME -3 38 0 10 4.07591e+007 4.07591e+007 4.07591e+007 2300 1;
+VOLUME -3 38 0 10 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 220 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-1-s \$0-knob-1-r
 EXT_VOL -4 38 0 10 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 20 141 tgl 30 0 \$0-sound-btn-s \$0-sound-btn-r SOUND 0 38 0
@@ -4338,7 +4338,7 @@ file \, and turns off all spigots below;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 37 234 pd display-pattern-name;
-#N canvas 917 138 831 747 pattern-chaining 0;
+#N canvas 917 138 831 747 pattern-chaining 1;
 #X obj 389 650 s \$0-current-pattern;
 #X obj 326 77 r \$0-pattern-end;
 #X text 413 19 Handle pattern chaining;
@@ -6762,46 +6762,48 @@ KEYBRD -3 38 0 10 -1 -71583 -1 0 1;
 #X obj 1356 24 inlet select-effect;
 #X obj 1099 735 outlet gates-out;
 #X obj 788 26 inlet step;
-#N canvas 315 291 635 564 pattern-inlet 0;
+#N canvas 930 238 635 564 pattern-inlet 0;
 #X obj 168 49 inlet;
-#X obj 351 352 array size \$0-pattern-chain;
-#X obj 351 326 list length;
-#X obj 314 287 t a a;
+#X obj 337 372 array size \$0-pattern-chain;
+#X obj 337 346 list length;
 #X obj 314 413 array set \$0-pattern-chain;
 #X text 61 3 Take in a pattern or list of patterns \, and make that
 the pattern chain.;
-#X obj 96 316 s \$0-pattern-end;
-#X obj 64 346 s \$0-ext-pattern-load-volume;
-#X obj 245 110 t a a;
-#X msg 64 250 1;
-#X obj 228 178 spigot;
-#X obj 375 125 r \$0-ext-step-btn-0-s;
-#X obj 375 165 == 0;
-#X obj 228 208 t b a;
+#X obj 96 386 s \$0-pattern-end;
+#X obj 64 416 s \$0-ext-pattern-load-volume;
+#X obj 235 110 t a a;
+#X msg 64 270 1;
+#X obj 235 178 spigot;
+#X obj 367 125 r \$0-ext-step-btn-0-s;
+#X obj 367 165 == 0;
+#X obj 235 208 t b a;
 #X obj 168 74 route bang;
 #X obj 168 178 spigot;
 #X obj 314 195 spigot 1;
-#X obj 64 286 t b f;
-#X connect 0 0 14 0;
+#X obj 360 317 s \$0-restart-pattern-chain;
+#X obj 314 267 t a a b;
+#X obj 64 356 t b f;
+#X connect 0 0 13 0;
 #X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 0;
-#X connect 8 0 10 0;
-#X connect 8 1 16 0;
-#X connect 9 0 17 0;
-#X connect 10 0 13 0;
-#X connect 11 0 10 1;
-#X connect 11 0 12 0;
+#X connect 7 0 9 0;
+#X connect 7 1 15 0;
+#X connect 8 0 18 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 1;
+#X connect 10 0 11 0;
+#X connect 10 0 14 1;
 #X connect 11 0 15 1;
-#X connect 12 0 16 1;
-#X connect 13 0 9 0;
-#X connect 13 1 3 0;
-#X connect 14 0 15 0;
-#X connect 14 1 8 0;
-#X connect 15 0 9 0;
-#X connect 16 0 3 0;
-#X connect 17 0 7 0;
-#X connect 17 1 6 0;
+#X connect 12 0 8 0;
+#X connect 12 1 17 0;
+#X connect 13 0 14 0;
+#X connect 13 1 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 17 0;
+#X connect 17 0 3 0;
+#X connect 17 1 2 0;
+#X connect 17 2 16 0;
+#X connect 18 0 6 0;
+#X connect 18 1 5 0;
 #X restore 903 95 pd pattern-inlet;
 #N canvas 791 92 844 772 pack-grid-buttons 0;
 #X obj 258 56 r \$0-grid-btn-0-s;
@@ -14718,7 +14720,7 @@ WRITE button is pressed while in FUNCT mode;
 -155648 0;
 #X obj 100 104 cnv 15 15 15 \$0-lcd-3-s \$0-lcd-3-r empty 0 5 0 14
 -1 -155648 0;
-#X obj 200 48 cnv 15 15 15 \$0-lcd-0-s \$0-lcd-0-r PATTERN:1 0 5 0
+#X obj 200 48 cnv 15 15 15 \$0-lcd-0-s \$0-lcd-0-r PATTERN:3 0 5 0
 14 -1 -155648 0;
 #X obj 200 67 cnv 15 15 15 \$0-lcd-1-s \$0-lcd-1-r SOUND:4 0 5 0 14
 -1 -155648 0;
@@ -15070,9 +15072,9 @@ The canvas is named \$0-lcd-array-size-r and it shows the message "TOO_BIG_TO_DI
 #X obj 66 212 s \$0-current-sample-start-position-r;
 #X obj 41 25 hsl 150 10 0 1 0 0 \$0-current-sample-start-position-s
 \$0-current-sample-start-position-r empty -2 -8 0 10 -1 -262144 -1
-3083 1;
+0 1;
 #X obj 41 35 hsl 150 10 0 1 0 0 \$0-current-sample-length-s \$0-current-sample-length-r
-empty -2 -8 0 10 -1 -262144 -1 2569 1;
+empty -2 -8 0 10 -1 -262144 -1 14900 1;
 #X obj 66 182 tbc-utils/receive-generator;
 #X obj 36 277 tbc-utils/receive-generator;
 #X connect 0 0 9 1;
@@ -15256,37 +15258,37 @@ empty -2 -8 0 10 -1 -262144 -1 2569 1;
 #X obj 261 301 cnv 10 200 90 \$0-cnv-grid-knobs-label-s \$0-cnv-grid-knobs-label-r
 VOLUME 80 80 0 10 -71583 -1 0;
 #X obj 270 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-0-s \$0-grid-knob-0-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2100 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 320 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-1-s \$0-grid-knob-1-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 370 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-2-s \$0-grid-knob-2-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2700 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 420 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-3-s \$0-grid-knob-3-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 270 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-4-s \$0-grid-knob-4-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 320 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-5-s \$0-grid-knob-5-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 370 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-6-s \$0-grid-knob-6-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 420 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-7-s \$0-grid-knob-7-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 270 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-8-s \$0-grid-knob-8-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 320 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-9-s \$0-grid-knob-9-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 370 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-10-s \$0-grid-knob-10-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 420 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-11-s \$0-grid-knob-11-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 270 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-12-s \$0-grid-knob-12-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 320 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-13-s \$0-grid-knob-13-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 370 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-14-s \$0-grid-knob-14-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 420 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-15-s \$0-grid-knob-15-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 2900 1;
+empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
 #X obj 735 80 r \$0-playing;
 #X obj 0 0 tbc-images/startup-animation;
 #X obj 817 628 r \$0-current-step-early;
