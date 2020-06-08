@@ -13,7 +13,7 @@
 #X obj 433 52 inlet stereo-check;
 #N canvas 1103 442 327 346 play-right-channel 0;
 #X obj 50 151 *~ 0;
-#X obj 52 283 outlet~;
+#X obj 51 283 outlet~;
 #X obj 51 49 inlet~;
 #X obj 120 50 inlet;
 #X obj 120 111 switch~;
