@@ -1,4 +1,4 @@
-#N struct 1193-template float x float y float rgb;
+#N struct 1241-template float x float y float rgb;
 #N canvas 377 124 1380 797 12;
 #X obj 0 123 cnv 15 470 288 empty \$0-cnv-grid empty 20 12 0 14 -71583
 -262144 0;
@@ -266,9 +266,9 @@
 #X connect 55 0 22 0;
 #X restore 735 158 pd clock;
 #X obj 170 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-0-s \$0-knob-0-r
-VOLUME -3 38 0 10 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+VOLUME -3 38 0 10 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 220 141 flatgui/knob 30 30 0 1 0 1 \$0-knob-1-s \$0-knob-1-r
-EXT_VOL -4 38 0 10 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+EXT_VOL -4 38 0 10 8.90982e+006 8.90982e+006 8.90982e+006 0 1;
 #X obj 20 141 tgl 30 0 \$0-sound-btn-s \$0-sound-btn-r SOUND 0 38 0
 10 -1 -71583 -1 0 1;
 #X obj 70 141 tgl 30 0 \$0-pattern-btn-s \$0-pattern-btn-r PATTERN
@@ -3191,8 +3191,6 @@ represent unmapped midi controls.;
 #X connect 26 2 27 0;
 #X connect 27 0 0 0;
 #X restore 746 511 pd grid-knob-labels-only-numbers;
-#X msg 539 441 PITCH PITCH MIX CRUSH SPEED SPEED DRIVE COMP SPEED TIME
-FREQ FREQ SIZE TIME TIME VOL;
 #X obj 72 123 t a a;
 #N canvas 425 313 1281 613 grid-knobs-cnv 0;
 #X obj 1059 66 r \$0-colors-packed;
@@ -3310,6 +3308,8 @@ FREQ FREQ SIZE TIME TIME VOL;
 #X obj 603 190 t b b;
 #X msg 508 392 empty empty empty METRO empty empty empty empty AMNT
 AMNT AMNT AMNT AMNT AMNT AMNT AMNT;
+#X msg 539 441 PITCH PITCH MIX CRUSH SPEED SPEED DRIVE COMP SPEED TIME
+FREQ FREQ SIZE TIME TIME WET;
 #X connect 1 0 3 0;
 #X connect 2 0 23 0;
 #X connect 4 0 1 0;
@@ -3331,27 +3331,27 @@ AMNT AMNT AMNT AMNT AMNT AMNT AMNT;
 #X connect 15 0 6 1;
 #X connect 15 1 12 0;
 #X connect 16 0 3 0;
-#X connect 19 0 27 0;
+#X connect 19 0 32 0;
 #X connect 19 1 7 0;
-#X connect 20 0 32 0;
+#X connect 20 0 31 0;
 #X connect 20 1 7 0;
-#X connect 21 0 28 0;
+#X connect 21 0 27 0;
 #X connect 22 0 21 1;
 #X connect 23 0 6 0;
 #X connect 23 0 4 0;
 #X connect 24 0 23 1;
 #X connect 25 0 26 0;
-#X connect 27 0 18 0;
-#X connect 28 0 29 0;
-#X connect 28 1 30 0;
-#X connect 30 0 8 0;
-#X connect 30 1 9 0;
-#X connect 30 2 19 0;
-#X connect 30 3 20 0;
-#X connect 30 4 31 0;
-#X connect 30 5 7 0;
-#X connect 31 0 25 0;
-#X connect 31 1 7 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 29 0 8 0;
+#X connect 29 1 9 0;
+#X connect 29 2 19 0;
+#X connect 29 3 20 0;
+#X connect 29 4 30 0;
+#X connect 29 5 7 0;
+#X connect 30 0 25 0;
+#X connect 30 1 7 0;
+#X connect 31 0 18 0;
 #X connect 32 0 18 0;
 #X restore 22 102 pd change-knob-labels;
 #N canvas 420 440 570 402 console-help-messages 0;
@@ -4338,7 +4338,7 @@ file \, and turns off all spigots below;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 37 234 pd display-pattern-name;
-#N canvas 917 138 831 747 pattern-chaining 1;
+#N canvas 917 138 831 747 pattern-chaining 0;
 #X obj 389 650 s \$0-current-pattern;
 #X obj 326 77 r \$0-pattern-end;
 #X text 413 19 Handle pattern chaining;
@@ -6747,7 +6747,7 @@ pressed. Pattern 0 is loaded on startup.;
 sequencer subpatch;
 #X restore 525 344 pd patterns;
 #X obj 320 141 tgl 30 0 \$0-ext-step-btn-s \$0-ext-step-btn-r EXT_STEP
--7 38 0 10 -1 -71583 -1 1 1;
+-7 38 0 10 -1 -71583 -1 0 1;
 #X obj 370 141 tgl 30 0 \$0-key-control-btn-s \$0-key-control-btn-r
 KEYBRD -3 38 0 10 -1 -71583 -1 0 1;
 #X obj 761 111 r \$0-bpm;
@@ -6963,7 +6963,7 @@ the pattern chain.;
 #X obj 420 141 tgl 30 0 \$0-midi-control-btn-s \$0-midi-control-btn-r
 MIDI 3 38 0 10 -1 -71583 -1 0 1;
 #N canvas 72 182 705 768 master-audio-chain 0;
-#X text 155 323 <-- Effects happen here;
+#X text 153 342 <-- Effects happen here;
 #X obj 506 167 line~;
 #X obj 335 198 *~;
 #X obj 506 85 r \$0-ext-volume;
@@ -7463,19 +7463,17 @@ subpatches for each row. fx-12-15 is slightly different.;
 #X connect 13 0 2 0;
 #X connect 13 1 8 0;
 #X connect 15 0 3 0;
-#X restore 52 324 pd fx-chain;
+#X restore 52 344 pd fx-chain;
 #X obj 53 698 *~ 0;
 #X obj 138 698 *~ 0;
 #X msg 167 668 1;
-#X obj 157 471 pack 0 10;
-#X obj 157 500 line~;
-#X obj 52 541 *~;
-#X obj 137 541 *~;
+#X obj 375 364 pack 0 10;
+#X obj 375 393 line~;
 #X obj 506 140 pack 0 1;
 #X obj 506 110 tbc-utils/lin-to-log;
 #X text 179 696 Optimization to prevent crackling when the patch is
 loaded;
-#X obj 157 443 tbc-utils/lin-to-log;
+#X obj 375 336 tbc-utils/lin-to-log;
 #N canvas 503 174 1047 712 metronome 0;
 #X obj 68 543 *~;
 #X obj 399 551 line~;
@@ -7559,7 +7557,7 @@ loaded;
 #X connect 35 0 31 0;
 #X connect 36 0 31 0;
 #X connect 37 0 14 0;
-#X restore 24 500 pd metronome;
+#X restore 86 549 pd metronome;
 #X obj 115 155 line~;
 #X obj 115 126 pack 0 1;
 #X obj 115 96 tbc-utils/lin-to-log;
@@ -7751,55 +7749,79 @@ sound.;
 #X connect 80 0 49 0;
 #X connect 81 0 39 1;
 #X restore 335 248 pd record-ext-input;
-#X obj 157 413 r \$0-fx-parameter-15;
+#X obj 375 306 r \$0-fx-parameter-15;
 #X obj 115 72 r \$0-int-volume;
 #X obj 485 224 clip~ -1 1;
 #X obj 335 224 clip~ -1 1;
-#X obj 51 363 clip~ -1 1;
-#X obj 137 363 clip~ -1 1;
-#X text 331 413 <-- FX 15 "DRY" knob controls post FX vol;
+#X obj 51 443 clip~ -1 1;
+#X obj 137 443 clip~ -1 1;
+#X obj 51 583 clip~ -1 1;
+#X obj 137 583 clip~ -1 1;
+#X obj 52 302 +~ 0;
+#X obj 96 302 +~ 0;
+#X obj 52 509 *~;
+#X obj 94 509 *~;
+#X obj 138 509 *~;
+#X obj 180 509 *~;
+#X obj 356 458 -~;
+#X obj 356 434 sig~ 1;
+#X text 222 511 <-- FX Dry / Wet mix;
+#X text 526 306 <-- FX 15 knob controls;
+#X text 554 324 Dry / Wet mix;
 #X connect 1 0 2 1;
 #X connect 1 0 11 1;
-#X connect 2 0 36 0;
-#X connect 3 0 23 0;
-#X connect 4 0 30 0;
-#X connect 5 0 31 0;
+#X connect 2 0 34 0;
+#X connect 3 0 21 0;
+#X connect 4 0 28 0;
+#X connect 5 0 29 0;
 #X connect 8 0 9 0;
 #X connect 9 0 17 0;
 #X connect 10 0 2 0;
-#X connect 11 0 35 0;
+#X connect 11 0 33 0;
 #X connect 12 0 11 0;
 #X connect 13 0 14 2;
-#X connect 14 0 37 0;
-#X connect 14 1 38 0;
+#X connect 14 0 35 0;
+#X connect 14 1 36 0;
 #X connect 15 0 6 0;
 #X connect 16 0 7 0;
 #X connect 17 0 16 1;
 #X connect 17 0 15 1;
 #X connect 18 0 19 0;
-#X connect 19 0 21 1;
-#X connect 19 0 20 1;
-#X connect 20 0 15 0;
-#X connect 21 0 16 0;
-#X connect 22 0 1 0;
-#X connect 23 0 22 0;
-#X connect 25 0 18 0;
-#X connect 26 0 20 0;
-#X connect 26 1 21 0;
-#X connect 27 0 31 1;
-#X connect 27 0 30 1;
-#X connect 28 0 27 0;
-#X connect 29 0 28 0;
-#X connect 30 0 14 0;
-#X connect 31 0 14 1;
-#X connect 32 0 14 0;
-#X connect 32 1 14 1;
-#X connect 33 0 25 0;
-#X connect 34 0 29 0;
-#X connect 35 0 32 1;
-#X connect 36 0 32 0;
-#X connect 37 0 20 0;
-#X connect 38 0 21 0;
+#X connect 19 0 45 1;
+#X connect 19 0 41 1;
+#X connect 19 0 43 1;
+#X connect 20 0 1 0;
+#X connect 21 0 20 0;
+#X connect 23 0 18 0;
+#X connect 24 0 37 0;
+#X connect 24 1 38 0;
+#X connect 25 0 29 1;
+#X connect 25 0 28 1;
+#X connect 26 0 25 0;
+#X connect 27 0 26 0;
+#X connect 28 0 39 0;
+#X connect 29 0 40 0;
+#X connect 30 0 39 0;
+#X connect 30 1 40 0;
+#X connect 31 0 23 0;
+#X connect 32 0 27 0;
+#X connect 33 0 30 1;
+#X connect 34 0 30 0;
+#X connect 35 0 41 0;
+#X connect 36 0 43 0;
+#X connect 37 0 15 0;
+#X connect 38 0 16 0;
+#X connect 39 0 14 0;
+#X connect 39 0 42 0;
+#X connect 40 0 14 1;
+#X connect 40 0 44 0;
+#X connect 41 0 37 0;
+#X connect 42 0 37 0;
+#X connect 43 0 38 0;
+#X connect 44 0 38 0;
+#X connect 45 0 42 1;
+#X connect 45 0 44 1;
+#X connect 46 0 45 0;
 #X restore 517 579 pd master-audio-chain;
 #N canvas 49 462 535 462 select-effect 0;
 #X obj 60 59 inlet;
@@ -12277,7 +12299,7 @@ path of the current sound;
 #X connect 31 3 30 0;
 #X connect 31 4 22 0;
 #X restore 20 144 pd display-current-file-name;
-#N canvas 748 50 1215 917 all-16-samplers 0;
+#N canvas 511 48 1215 917 all-16-samplers 0;
 #X obj 12 187 bng 30 250 50 0 \$0-play-sample-0-s \$0-play-sample-0-r
 Trigger 35 7 0 10 -262144 -1 -1;
 #X text 20 90 Scroll right for more samples ->>>>>>>>>>>;
@@ -14720,13 +14742,13 @@ WRITE button is pressed while in FUNCT mode;
 -155648 0;
 #X obj 100 104 cnv 15 15 15 \$0-lcd-3-s \$0-lcd-3-r empty 0 5 0 14
 -1 -155648 0;
-#X obj 200 48 cnv 15 15 15 \$0-lcd-0-s \$0-lcd-0-r PATTERN:3 0 5 0
+#X obj 200 48 cnv 15 15 15 \$0-lcd-0-s \$0-lcd-0-r PATTERN:0 0 5 0
 14 -1 -155648 0;
-#X obj 200 67 cnv 15 15 15 \$0-lcd-1-s \$0-lcd-1-r SOUND:4 0 5 0 14
+#X obj 200 67 cnv 15 15 15 \$0-lcd-1-s \$0-lcd-1-r SOUND:0 0 5 0 14
 -1 -155648 0;
-#X obj 100 48 cnv 15 15 15 \$0-lcd-bpm-s \$0-lcd-bpm-r 136_BPM 0 5
+#X obj 100 48 cnv 15 15 15 \$0-lcd-bpm-s \$0-lcd-bpm-r 115_BPM 0 5
 0 14 -1 -155648 0;
-#X obj 100 67 cnv 15 15 15 \$0-lcd-swing-s \$0-lcd-swing-r EXT_STEP
+#X obj 100 67 cnv 15 15 15 \$0-lcd-swing-s \$0-lcd-swing-r 0%_SWING
 0 5 0 14 -1 -155648 0;
 #N canvas 75 202 732 530 trigger-sounds 0;
 #X obj 47 483 s \$0-play-sample-0-r;
@@ -14822,8 +14844,8 @@ ONE_SHOT_MODE 60 80 0 10 -71583 -1 0;
 #X obj 0 0 cnv 15 150 55 \$0-sound-display-bg-s \$0-sound-display-bg-r
 empty 20 12 0 14 -1 -1 0;
 #N canvas 0 81 450 250 (subpatch) 0;
-#X array \$0-snd-display-L 1 float 4;
-#X coords 0 1 1 -1 150 55 2 0 0;
+#X array \$0-snd-display-L 20672 float 4;
+#X coords 0 1 20671 -1 150 55 2 0 0;
 #X restore 0 0 graph;
 #X text 595 700 Resize the array to fit the current sound;
 #X text 570 818 Get the array data from the current sound and place
@@ -14963,7 +14985,7 @@ of loading it all at once.;
 #X msg 457 727 1;
 #X obj 635 347 spigot 1;
 #X obj 745 347 spigot 1;
-#X obj 144 1 cnv 5 5 5 \$0-lcd-array-size-s \$0-lcd-array-size-r TOO_BIG_TO_DISPLAY
+#X obj 144 1 cnv 5 5 5 \$0-lcd-array-size-s \$0-lcd-array-size-r empty
 -141 27 0 14 -1 -1 0;
 #X obj 317 750 spigot 0;
 #X obj 430 636 f;
@@ -15258,37 +15280,37 @@ empty -2 -8 0 10 -1 -262144 -1 14900 1;
 #X obj 261 301 cnv 10 200 90 \$0-cnv-grid-knobs-label-s \$0-cnv-grid-knobs-label-r
 VOLUME 80 80 0 10 -71583 -1 0;
 #X obj 270 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-0-s \$0-grid-knob-0-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2700 1;
 #X obj 320 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-1-s \$0-grid-knob-1-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 370 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-2-s \$0-grid-knob-2-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2100 1;
 #X obj 420 191 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-3-s \$0-grid-knob-3-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 270 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-4-s \$0-grid-knob-4-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 320 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-5-s \$0-grid-knob-5-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 370 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-6-s \$0-grid-knob-6-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 0 1;
 #X obj 420 241 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-7-s \$0-grid-knob-7-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 270 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-8-s \$0-grid-knob-8-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 320 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-9-s \$0-grid-knob-9-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 370 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-10-s \$0-grid-knob-10-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 420 291 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-11-s \$0-grid-knob-11-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 270 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-12-s \$0-grid-knob-12-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 0 1;
 #X obj 320 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-13-s \$0-grid-knob-13-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 0 1;
 #X obj 370 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-14-s \$0-grid-knob-14-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 420 341 flatgui/knob 30 30 0 1 0 1 \$0-grid-knob-15-s \$0-grid-knob-15-r
-empty 8 38 1 8 4.07591e+007 4.07591e+007 4.07591e+007 0 1;
+empty 8 38 1 8 8.90982e+006 8.90982e+006 8.90982e+006 2900 1;
 #X obj 735 80 r \$0-playing;
 #X obj 0 0 tbc-images/startup-animation;
 #X obj 817 628 r \$0-current-step-early;
