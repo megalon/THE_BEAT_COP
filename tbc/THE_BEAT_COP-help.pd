@@ -1,4 +1,4 @@
-#N struct 1485-template float x float y float rgb;
+#N struct 1727-template float x float y float rgb;
 #N canvas 202 50 1298 632 12;
 #X declare -path tbc;
 #N canvas 185 122 815 769 text-box-display 0;
@@ -55,11 +55,6 @@ the grid-buttons.;
 #X text 44 455 To exit write-mode \, press the WRITE button again \,
 or press any other modifier button (SOUND \, PATTERN \, BPM \, SAMPLES
 \, FUNCT \, FX);
-#X text 64 337 The pitch range is 0|0 through 2|0 \, where the first
-number is the octave \, and the second number is the note on the chromatic
-scale. The default value 1|0 is assumed to be 440hz (concert A).;
-#X text 64 407 For octaves \, 0 indicates an octave down \, 1 indicates
-the default octave \, and 2 indicates an octave up.;
 #X text 64 297 A standard 16 step sequence of frequencies. Each knob
 controls the pitch of the corresponding grid button.;
 #X text 44 55 This mode allows you to create a sequence of gate / frequency
@@ -68,6 +63,11 @@ currently selected on the display \, labeled "SOUND:0-15". To change
 the selected sound \, press the SOUND button.;
 #X text 64 237 A standard 16 step sequence of gates. Press the PLAY
 button to play the sequence.;
+#X text 64 337 The pitch range is -1|0 through 1|0 \, where the first
+number is the octave \, and the second number is the note on the chromatic
+scale. The default value 0|0 is 440hz (concert A).;
+#X text 64 397 For octaves \, -1 indicates an octave down \, 0 indicates
+the default octave \, and 1 indicates an octave up.;
 #X restore 624 272 pd \$0-write-mode;
 #N canvas 3 50 658 546 \$0-sound-mode 0;
 #X obj 26 17 cnv 30 600 500 empty empty sound-mode 20 20 0 20 -233017
