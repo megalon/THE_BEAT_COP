@@ -1,4 +1,4 @@
-#N struct 1727-template float x float y float rgb;
+#N struct 5742-template float x float y float rgb;
 #N canvas 202 50 1298 632 12;
 #X declare -path tbc;
 #N canvas 185 122 815 769 text-box-display 0;
@@ -216,7 +216,7 @@ way to the right for 100% wet \, and all the way to the left for 100%
 dry.;
 #X restore 624 372 pd \$0-fx-mode;
 #N canvas 4 50 658 900 \$0-funct-mode 0;
-#X obj 26 17 cnv 30 600 1900 empty empty funct-mode 20 20 0 20 -233017
+#X obj 26 17 cnv 30 600 1940 empty empty funct-mode 20 20 0 20 -233017
 -66577 0;
 #X text 44 861 grid-buttons:;
 #X text 44 1707 grid-knobs:;
@@ -269,14 +269,14 @@ not affect the FX or PARAM randomizers since FX are applied to the
 entire pattern.;
 #X text 64 1737 The knob labeled "METRO" controls the volume of the
 internal metronome.;
-#X text 64 1817 All other unlabeled grid knobs are currently unused.
+#X text 64 1867 All other unlabeled grid knobs are currently unused.
 ;
 #X text 74 1071 BLANK BUTTON: Currently unused.;
 #X text 44 55 This mode adds advanced functionality to The Beat Cop
 and offers several ways to manipulate the current pattern.;
-#X text 64 1777 The 8 knobs on the bottom of the grid adjust the strength
+#X text 64 1827 The 8 knobs on the bottom of the grid adjust the strength
 of the corresponding randomizers.;
-#X text 43 1852 To exit funct-mode \, press the FUNCT button again
+#X text 43 1902 To exit funct-mode \, press the FUNCT button again
 \, or press any other modifier button (WRITE \, SOUND \, PATTERN \,
 BPM \, SAMPLES \, FX).;
 #X text 113 361 The MIDI-MAP button activates midi-mapper-mode.;
@@ -305,6 +305,9 @@ and the highlight color to indicate "one-shot recording" is on.;
 #X text 93 601 SAMPLE button (previously WRITE button):;
 #X text 113 631 The SAMPLE button allows you to record a new sample
 into the currently selected sound using the two inlets IN-L~ and IN-R~
+;
+#X text 64 1777 The knob labeled "RESMPL" controls the volume of THE
+BEAT COP itself into the sample recording input. This is known as "resampling".
 ;
 #X restore 624 392 pd \$0-funct-mode;
 #N canvas 0 50 658 546 \$0-paste-mode 0;
